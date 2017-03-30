@@ -14,12 +14,15 @@ class Menu_Item
   ### INSTANCE METHODS
 
   def save()
-    sql = ""
+    sql = "INSERT INTO menu_items (eatery_id, burrito_id, price) VALUES (#{@eatery_id},#{@burrito_id},#{@price}) RETURNING id"
     mi_array = SqlRunner.run(sql)
     mi_objects = mi_array.map{|mi| Menu_Item.new(mi)}
     return mi_objects
   end
 
+  ### CLASS METHODS
 
+  def self.all()
+    sql = "SELECT * FROM menu_items"
 
 end
