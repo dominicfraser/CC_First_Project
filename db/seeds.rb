@@ -1,4 +1,5 @@
 require_relative('../models/day')
+require_relative('../models/eatery')
 require('pry-byebug')
 
 monday = Day.new({
@@ -30,6 +31,12 @@ thursday.save
 friday.save
 saturday.save
 sunday.save
+
+eatery1 = Eatery.new({
+  'eatery_name' => 'eatery1'
+  })
+
+eatery1.save
 
 binding.pry
 nil
