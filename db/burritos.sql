@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS deals;
 DROP TABLE IF EXISTS menu_items;
 DROP TABLE IF EXISTS days;
 DROP TABLE IF EXISTS eateries;
-DROP TABLE IF EXISTS burgers;
+DROP TABLE IF EXISTS burritos;
 
 
 CREATE TABLE days (
@@ -15,7 +15,7 @@ CREATE TABLE eateries (
   eatery_name VARCHAR(255)
 );
 
-CREATE TABLE burgers (
+CREATE TABLE burritos (
   id SERIAL4 PRIMARY KEY,
   burger_name VARCHAR(255)
 );
@@ -23,7 +23,7 @@ CREATE TABLE burgers (
 CREATE TABLE menu_items (
   id SERIAL4 PRIMARY KEY,
   eatery_id INT4 REFERENCES eateries(id) ON DELETE CASCADE,
-  burger_id INT4 REFERENCES burgers(id) ON DELETE CASCADE,
+  burrito_id INT4 REFERENCES burrito(id) ON DELETE CASCADE,
   price DECIMAL(19,4)
 );
 
