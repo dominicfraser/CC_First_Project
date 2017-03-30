@@ -35,8 +35,16 @@ sunday.save
 eatery1 = Eatery.new({
   'eatery_name' => 'eatery1'
   })
+eatery2 = Eatery.new({
+  'eatery_name' => 'eatery2'
+  })
+eatery3 = Eatery.new({
+  'eatery_name' => 'eatery3'
+  })
 
 eatery1.save
+eatery2.save
+eatery3.save
 
 binding.pry
 nil
