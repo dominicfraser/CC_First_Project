@@ -17,4 +17,13 @@ class Day
     @id = days_array.first['id'].to_i
   end
 
+  ### CLASS METHODS
+
+  def self.all
+    sql = "SELECT * FROM days"
+    days = SqlRunner.run(sql)
+    day_objects = days.map{|day| Day.new(day)}
+    return day_objects
+  end
+
 end
