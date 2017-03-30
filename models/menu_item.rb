@@ -11,6 +11,15 @@ class Menu_Item
     @price = mi_hash['price'].to_f.round(4)
   end
 
+  ### INSTANCE METHODS
+
+  def save()
+    sql = ""
+    mi_array = SqlRunner.run(sql)
+    mi_objects = mi_array.map{|mi| Menu_Item.new(mi)}
+    return mi_objects
+  end
+
 
 
 end
