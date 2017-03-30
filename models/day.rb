@@ -19,7 +19,7 @@ class Day
 
   ### CLASS METHODS
 
-  def self.all
+  def self.all()
     sql = "SELECT * FROM days"
     days = SqlRunner.run(sql)
     day_objects = days.map{|day| Day.new(day)}
