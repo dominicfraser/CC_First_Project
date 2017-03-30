@@ -17,5 +17,13 @@ class Burrito
     @id = burritos_array.first['id'].to_i
   end
 
-  
+  ### CLASS METHODS
+
+  def self.all()
+    sql = "SELECT * FROM burritos"
+    burritos = SqlRunner.run(sql)
+    burrito_objects = burritos.map{|burrito| Burrito.new(burrito)}
+    return burrito_objects
+  end
+
 end
