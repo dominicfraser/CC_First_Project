@@ -13,7 +13,7 @@ class Day
 
   def save()
     sql = "INSERT INTO days (day_name) VALUES ('#{@day_name}') RETURNING id" 
-    days_array = SqlRunner.run(sqL)
+    days_array = SqlRunner.run(sql)
     @id = days_array.first['id'].to_i
   end
 
