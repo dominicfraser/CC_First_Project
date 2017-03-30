@@ -6,3 +6,6 @@ monday = Day.new({
   })
 
 monday.save
+
+binding.pry
+nil
