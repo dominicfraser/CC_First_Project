@@ -9,4 +9,12 @@ class Day
     @day_name = day_hash['day_name']
   end
 
+  ### INSTANCE METHODS
+
+  def save()
+    sql = "INSERT INTO days (day_name) VALUES ('#{@day_name}') RETURNING id" 
+    days_array = SqlRunner.run(sqL)
+    @id = days_array.first['id'].to_i
+  end
+
 end
