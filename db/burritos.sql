@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS deals;
 DROP TABLE IF EXISTS menu_items;
 DROP TABLE IF EXISTS days;
 DROP TABLE IF EXISTS eateries;
@@ -21,15 +22,15 @@ CREATE TABLE burgers (
 
 CREATE TABLE menu_items (
   id SERIAL4 PRIMARY KEY,
-  eatery_id REFERENCES eateries(id) ON DELETE CASCADE,
-  burger_id REFERENCES burgers(id) ON DELETE CASCADE,
+  eatery_id INT4 REFERENCES eateries(id) ON DELETE CASCADE,
+  burger_id INT4 REFERENCES burgers(id) ON DELETE CASCADE,
   price DECIMAL(19,4)
 );
 
 CREATE TABLE deals (
   id SERIAL4 PRIMARY KEY,
-  day_id REFERENCES days(id),
-  menu_item_id REFERENCES menu_items(id),
+  day_id INT4 REFERENCES days(id),
+  menu_item_id INT4 REFERENCES menu_items(id),
   deal_name VARCHAR(255)
   -- applies_to
   -- operator
