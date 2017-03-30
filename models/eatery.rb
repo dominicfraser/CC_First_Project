@@ -17,4 +17,13 @@ class Eatery
     @id = eateries_array.first['id'].to_i
   end
 
+  ### CLASS METHODS
+
+  def self.all()
+    sql = "SELECT * FROM eateries"
+    eateries = SqlRunner.run(sql)
+    eateries_objects = eateries.map{|eatery| Eatery.new(eatery)}
+    return eateries_objects
+  end
+
 end
