@@ -12,7 +12,7 @@ class Burrito
   ### INSTANCE METHODS
 
   def save()
-    sql = "INSERT INTO burritos (burrito_name) VALUES ('#{burrito_name}') RETURNING id"
+    sql = "INSERT INTO burritos (burrito_name) VALUES ('#{@burrito_name}') RETURNING id"
     burritos_array = SqlRunner.run(sql)
     @id = burritos_array.first['id'].to_i
   end
