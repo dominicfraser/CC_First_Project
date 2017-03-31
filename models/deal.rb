@@ -32,7 +32,8 @@ class Deal
   end
 
   def self.all_on_day(day)
-    sql = ""
+    sql = "SELECT * FROM deals WHERE day_id = #{day.id} "
+    return Deal.map_deals(sql)
   end
 
 
