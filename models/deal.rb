@@ -33,4 +33,9 @@ class Deal
     SqlRunner.run(sql)
   end
 
+  def self.delete(deal_name)
+    sql = "DELETE FROM deals WHERE deal_name = '#{deal_name}' "
+    SqlRunner.run(sql)
+  end
+
 end
