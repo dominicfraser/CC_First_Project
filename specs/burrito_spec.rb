@@ -19,6 +19,10 @@ class TestBurrito < MiniTest::Test
       'eatery_name' => 'eatery1',
       'id' => 1
       })
+    @eatery2 = Eatery.new({
+      'eatery_name' => 'eatery1',
+      'id' => 2
+      })
     @menu_item1 = MenuItem.new({
       'eatery_id' => @eatery1.id,
       'burrito_id' => @burrito1.id,
@@ -31,7 +35,10 @@ class TestBurrito < MiniTest::Test
       'price' => 9,
       'id' => 2
       })
+  end
 
+  def test_burrito_is_sold_where
+    assert_equal(@eatery1,@burger1.eateries)
   end
 
 end

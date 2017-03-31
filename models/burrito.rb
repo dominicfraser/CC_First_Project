@@ -17,6 +17,9 @@ class Burrito
     @id = burritos_array.first['id'].to_i
   end
 
+  def eateries()
+    
+  end
 
   ### CLASS METHODS
 
