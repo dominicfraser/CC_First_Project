@@ -163,8 +163,11 @@ mi.create_deal(tuesday.id,'£1.50 off all Burritos at Eatery3 on Tuesdays').save
 MenuItem.find(eatery1.id).each{|mi| 
   mi.create_deal(monday.id,'2 for 1 on all Burritos at Eatery1 on Tuesdays').save}
 #Eatery2 Thursday EC same as CC
-#MenuItem.find(eatery2.id).each{|mi|
-
+MenuItem.find(eatery2.id).each{|mi|
+  if mi.is_in_a_selection?(expensive_core_burritos)
+    mi.create_deal(thursday.id,'Expensive Core Burritos same price as Cheap Core Burritos at Eatery2 on Thursdays').save
+  end
+  }   
 
 
 binding.pry
