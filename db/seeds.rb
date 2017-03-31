@@ -27,6 +27,9 @@ saturday = Day.new({
 sunday = Day.new({
   'day_name' => 'Sunday'
   })
+new_years_eve_2017 = Day.new({
+  'day_name' => 'new_years_eve_2017'
+  })
 
 monday.save
 tuesday.save
