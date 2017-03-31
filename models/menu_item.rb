@@ -19,6 +19,14 @@ class MenuItem
     @id = mi_array.first['id'].to_i
   end
 
+  def add_deal(day, deal_name)
+    Deal.new({ 
+      'day_id' => day,
+      'deal_name' => deal_name,
+      'menu_item_id' => self.id
+      }).save
+  end
+
   ### CLASS METHODS
 
   def self.all()
