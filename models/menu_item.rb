@@ -28,4 +28,10 @@ class MenuItem
     return mi_objects
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM menu_items WHERE id = #{id}"
+    menu_item = SqlRunner.run(sql).first
+    result = MenuItem.new(menu_item)
+  end
+
 end
