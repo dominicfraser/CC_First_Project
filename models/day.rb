@@ -17,6 +17,11 @@ class Day
     @id = days_array.first['id'].to_i
   end
 
+  def delete()
+    sql = "DELETE FROM days WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
   ### CLASS METHODS
 
   def self.all()
