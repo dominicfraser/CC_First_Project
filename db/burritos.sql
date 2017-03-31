@@ -24,7 +24,7 @@ CREATE TABLE menu_items (
   id SERIAL4 PRIMARY KEY,
   eatery_id INT4 REFERENCES eateries(id) ON DELETE CASCADE,
   burrito_id INT4 REFERENCES burritos(id) ON DELETE CASCADE,
-  price DECIMAL(19,4)
+  price DECIMAL(19,4) CHECK (price>0)
 );
 
 CREATE TABLE deals (
