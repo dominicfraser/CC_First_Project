@@ -17,7 +17,7 @@ CREATE TABLE eateries (
 
 CREATE TABLE burritos (
   id SERIAL4 PRIMARY KEY,
-  burger_name VARCHAR(255)
+  burrito_name VARCHAR(255)
 );
 
 CREATE TABLE menu_items (
