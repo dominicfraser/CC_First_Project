@@ -24,6 +24,11 @@ class Eatery
     return mi_objects
   end
 
+  def add_deal_to_all_mi(day, deal_name)
+    self.all_menu_items.each{|mi|
+      mi.create_deal(day.id,deal_name).save}
+  end
+
   ### CLASS METHODS
 
   def self.all()
