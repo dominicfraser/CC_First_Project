@@ -77,6 +77,9 @@ burrito8 = Burrito.new({
 burrito9 = Burrito.new({
   'burrito_name' => 'burrito9'
   })
+burrito10 = Burrito.new({
+  'burrito_name' => 'burrito10'
+  })
 
 burrito1.save
 burrito2.save
@@ -87,6 +90,7 @@ burrito6.save
 burrito7.save
 burrito8.save
 burrito9.save
+burrito10.save
 
 cheap_core_burritos = [burrito1,burrito2,burrito3]
 expensive_core_burritos = [burrito4,burrito5,burrito6]
@@ -126,9 +130,15 @@ menu_item3 = MenuItem.new({
   'burrito_id' => burrito9.id,
   'price' => 9
   })
+menu_item4 = MenuItem.new({
+  'eatery_id' => eatery3.id,
+  'burrito_id' => burrito10.id,
+  'price' => 10
+  })
 menu_item1.save
 menu_item2.save
 menu_item3.save
+menu_item4.save
 
 binding.pry
 nil
