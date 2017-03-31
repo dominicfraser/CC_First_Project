@@ -59,10 +59,19 @@ burrito2 = Burrito.new({
 burrito3 = Burrito.new({
   'burrito_name' => 'burrito3'
   })
+burrito4 = Burrito.new({
+  'burrito_name' => 'burrito4'
+  })
+burrito5 = Burrito.new({
+  'burrito_name' => 'burrito5'
+  })
 
 burrito1.save
 burrito2.save
 burrito3.save
+burrito4.save
+burrito5.save
+
 
 binding.pry
 nil
