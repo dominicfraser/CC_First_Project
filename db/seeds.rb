@@ -79,11 +79,15 @@ burrito6.save
 cheap_core_burritos = [burrito1,burrito2,burrito3]
 expensive_core_burritos = [burrito4,burrito5,burrito6]
 
-cheap_core_burritos.each{|burrito| burrito = MenuItem.new({
-  'eatery_id' => eatery1.id,
-  'burrito_id' => burrito.id,
-  'price' => 7.5
-  }).save
+
+cheap_core_burritos.each{|burrito| 
+  Eatery.all.each{ |eatery|
+     MenuItem.new({
+    'eatery_id' => eatery.id,
+    'burrito_id' => burrito.id,
+    'price' => 7.5
+    }).save
+  }
 }
 
 menu_item1 = MenuItem.new({
