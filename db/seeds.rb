@@ -158,7 +158,7 @@ eatery1.add_deal_to_all_mi(monday,'2 for 1 on all Burritos at Eatery1 on Tuesday
 
 ##selection of burritos at a certain eatery on a certain day##
 #Eatery2 Thursday EC same as CC
-MenuItem.find(eatery2.id).each{|mi|
+eatery2.all_menu_items.each{|mi|
   if mi.is_in_a_selection?(expensive_core_burritos)
     mi.create_deal(thursday.id,'Expensive Core Burritos same price as Cheap Core Burritos at Eatery2 on Thursdays').save
   end
