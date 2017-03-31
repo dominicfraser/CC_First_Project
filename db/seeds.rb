@@ -173,6 +173,6 @@ eatery3.all_menu_items.each{|mi|
 }
 
 
-
+menu_item4.delete
 binding.pry
 nil

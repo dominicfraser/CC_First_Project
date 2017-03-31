@@ -29,8 +29,8 @@ CREATE TABLE menu_items (
 
 CREATE TABLE deals (
   id SERIAL4 PRIMARY KEY,
-  day_id INT4 REFERENCES days(id),
-  menu_item_id INT4 REFERENCES menu_items(id),
+  day_id INT4 REFERENCES days(id) ON DELETE CASCADE,
+  menu_item_id INT4 REFERENCES menu_items(id) ON DELETE CASCADE,
   deal_name VARCHAR(255) NOT NULL
   -- applies_to
   -- operator
