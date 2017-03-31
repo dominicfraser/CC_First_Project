@@ -17,6 +17,11 @@ class Eatery
     @id = eateries_array.first['id'].to_i
   end
 
+  def delete()
+    sql = "DELETE FROM eateries WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
   def all_menu_items()
     sql = "SELECT * FROM menu_items WHERE eatery_id = #{self.id}"
     mi = SqlRunner.run(sql)
