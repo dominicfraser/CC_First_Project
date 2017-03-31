@@ -1,6 +1,6 @@
 require_relative('../db/sql_runner')
 
-class Menu_Item
+class MenuItem
 
   attr_reader :id, :eatery_id, :burrito_id, :price
 
