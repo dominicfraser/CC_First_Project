@@ -17,6 +17,16 @@ class Burrito
     @id = burritos_array.first['id'].to_i
   end
 
+  def delete()
+    sql = "DELETE FROM burritos WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
+  def update()
+    sql = "UPDATE burritos SET (burrito_name) = ('#{@burrito_name}') "
+    SqlRunner.run(sql)
+  end
+
   def eateries()
     sql = "SELECT e.* FROM eateries e
     INNER JOIN menu_items m
@@ -34,10 +44,6 @@ class Burrito
     price = SqlRunner.run(sql).first['price'].to_f.round(2)
   end  
 
-  def delete()
-    sql = "DELETE FROM burritos WHERE id = #{@id}"
-    SqlRunner.run(sql)
-  end
 
   ### CLASS METHODS
 
