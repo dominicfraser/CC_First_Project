@@ -28,7 +28,14 @@ class MenuItem
   end
 
   def is_in_a_selection?(selection)
-
+    selection.each{|burrito| 
+      if burrito.id == self.burrito_id
+        return true 
+      else
+        false
+      end 
+      }
+  end
   ### CLASS METHODS
 
   def self.all()
