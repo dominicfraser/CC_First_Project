@@ -65,16 +65,30 @@ burrito4 = Burrito.new({
 burrito5 = Burrito.new({
   'burrito_name' => 'burrito5'
   })
+burrito6 = Burrito.new({
+  'burrito_name' => 'burrito6'
+  })
 
 burrito1.save
 burrito2.save
 burrito3.save
 burrito4.save
 burrito5.save
+burrito6.save
+
+cheap_core_burritos = [burrito1,burrito2,burrito3]
+expensive_core_burritos = [burrito4,burrito5,burrito6]
+
+cheap_core_burritos.each{|burrito| burrito = MenuItem.new({
+  'eatery_id' => eatery1.id,
+  'burrito_id' => burrito.id,
+  'price' => 7.5
+  }).save
+}
 
 menu_item1 = MenuItem.new({
   'eatery_id' => eatery1.id,
-  'burrito_id' => burrito1.id,
+  'burrito_id' => burrito4.id,
   'price' => 8
   })
 
