@@ -140,10 +140,17 @@ menu_item2.save
 menu_item3.save
 menu_item4.save
 
+##all burritos at a certain eatery on a certain day##
+#Eatery1 Monday 20% 
 MenuItem.find(eatery1.id).each{|mi| 
-  mi.create_deal(monday.id,'30% off').save}
+  mi.create_deal(monday.id,'20% off all Burritos at Eatery1').save}
+#Eatery2 Wednesday 10% 
+MenuItem.find(eatery2.id).each{|mi|
+mi.create_deal(wednesday.id,'10% off all Burritos at Eatery2').save}
+#Eatery3 Friday 15%
+MenuItem.find(eatery3.id).each{|mi|
+mi.create_deal(friday.id,'15% off all Burritos at Eatery3').save}
 
-Deal.delete('30% off')
 
 binding.pry
 nil
