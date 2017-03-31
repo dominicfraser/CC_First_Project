@@ -46,5 +46,19 @@ eatery1.save
 eatery2.save
 eatery3.save
 
+burrito1 = Burrito.new({
+  'burrito_name' => 'burrito1'
+  })
+burrito2 = Burrito.new({
+  'burrito_name' => 'burrito2'
+  })
+burrito3 = Burrito.new({
+  'burrito_name' => 'burrito3'
+  })
+
+burrito1.save
+burrito2.save
+burrito3.save
+
 binding.pry
 nil

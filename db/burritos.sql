@@ -23,7 +23,7 @@ CREATE TABLE burritos (
 CREATE TABLE menu_items (
   id SERIAL4 PRIMARY KEY,
   eatery_id INT4 REFERENCES eateries(id) ON DELETE CASCADE,
-  burrito_id INT4 REFERENCES burrito(id) ON DELETE CASCADE,
+  burrito_id INT4 REFERENCES burritos(id) ON DELETE CASCADE,
   price DECIMAL(19,4)
 );
 
