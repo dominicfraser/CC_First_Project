@@ -33,5 +33,11 @@ class MenuItem
     menu_item = SqlRunner.run(sql).first
     result = MenuItem.new(menu_item)
   end
+  
+  def self.find(eatery_id)
+    sql = "SELECT * FROM menu_items WHERE eatery_id = #{eatery_id}"
+    menu_item = SqlRunner.run(sql).first
+    result = MenuItem.new(menu_item)
+  end 
 
 end
