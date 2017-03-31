@@ -31,7 +31,7 @@ CREATE TABLE deals (
   id SERIAL4 PRIMARY KEY,
   day_id INT4 REFERENCES days(id),
   menu_item_id INT4 REFERENCES menu_items(id),
-  deal_name VARCHAR(255) NOT NULL UNIQUE
+  deal_name VARCHAR(255) NOT NULL
   -- applies_to
   -- operator
   -- amount
