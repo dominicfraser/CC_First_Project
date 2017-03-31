@@ -27,6 +27,13 @@ class Burrito
     return eatery_objects
   end
 
+  def price(eatery)
+    sql = "SELECT m.price FROM menu_items m
+    WHERE burrito_id = #{@id} AND 
+    eatery_id = #{eatery.id}"
+    price = SqlRunner.run(sql).first['price'].to_f.round(2)
+  end  
+
   ### CLASS METHODS
 
   def self.all()
