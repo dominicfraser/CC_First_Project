@@ -37,8 +37,4 @@ class TestBurrito < MiniTest::Test
       })
   end
 
-  def test_burrito_is_sold_where
-    assert_equal(@eatery1,@burger1.eateries)
-  end
-
 end
