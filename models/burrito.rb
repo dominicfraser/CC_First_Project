@@ -17,6 +17,7 @@ class Burrito
     @id = burritos_array.first['id'].to_i
   end
 
+
   ### CLASS METHODS
 
   def self.all()
