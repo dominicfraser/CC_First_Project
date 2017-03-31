@@ -28,9 +28,7 @@ class Deal
 
   def self.all()
     sql = "SELECT * FROM deals"
-    deals = SqlRunner.run(sql)
-    deal_objects = deals.map{|deal| Deal.new(deal)}
-    return deal_objects
+    return Deal.map_deals(sql)
   end
 
   def self.all_on_day(day)
@@ -48,9 +46,11 @@ class Deal
     SqlRunner.run(sql)
   end
 
-  def map_deals(sql)
+  ## Helper
+  def self.map_deals(sql)
     deals = SqlRunner.run(sql)
     deal_objects = deals.map{|deal| Deal.new(deal)}
     return deal_objects
   end
+
 end
