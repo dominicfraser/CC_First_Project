@@ -142,26 +142,19 @@ menu_item4.save
 
 ##all burritos at a certain eatery on a certain day##
 #Eatery1 Monday 20% 
-MenuItem.find(eatery1.id).each{|mi| 
-  mi.create_deal(monday.id,'20% off all Burritos at Eatery1 on Mondays').save}
+eatery1.add_deal_to_all_mi(monday,'20% off all Burritos at Eatery1 on Mondays')
 #Eatery2 Wednesday 10% 
-MenuItem.find(eatery2.id).each{|mi|
-mi.create_deal(wednesday.id,'10% off all Burritos at Eatery2 on Wednesdays').save}
+eatery2.add_deal_to_all_mi(wednesday,'10% off all Burritos at Eatery2 on Wednesdays')
 #Eatery3 Friday 15%
-MenuItem.find(eatery3.id).each{|mi|
-mi.create_deal(friday.id,'15% off all Burritos at Eatery3 on Fridays').save}
+eatery3.add_deal_to_all_mi(friday,'15% off all Burritos at Eatery3 on Fridays')
 #Eatery1 Thursday £1 
-MenuItem.find(eatery1.id).each{|mi|
-mi.create_deal(thursday.id,'£1 off all Burritos at Eatery1 on Thursdays')}
+eatery1.add_deal_to_all_mi(thursday,'£1 off all Burritos at Eatery1 on Thursdays')
 #Eatery2 Sunday 50p
-MenuItem.find(eatery2.id).each{|mi|
-mi.create_deal(sunday.id,'50p off all Burritos at Eatery2 on Sundays').save}
+eatery2.add_deal_to_all_mi(sunday,'50p off all Burritos at Eatery2 on Sundays')
 #Eatery3 Tuesday £1.50 
-MenuItem.find(eatery3.id).each{|mi|
-mi.create_deal(tuesday.id,'£1.50 off all Burritos at Eatery3 on Tuesdays').save}
+eatery3.add_deal_to_all_mi(tuesday,'£1.50 off all Burritos at Eatery3 on Tuesdays')
 #Eatery1 Tuesday 2for1
-MenuItem.find(eatery1.id).each{|mi| 
-  mi.create_deal(monday.id,'2 for 1 on all Burritos at Eatery1 on Tuesdays').save}
+eatery1.add_deal_to_all_mi(monday,'2 for 1 on all Burritos at Eatery1 on Tuesdays')
 
 ##selection of burritos at a certain eatery on a certain day##
 #Eatery2 Thursday EC same as CC
