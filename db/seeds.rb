@@ -72,6 +72,13 @@ burrito3.save
 burrito4.save
 burrito5.save
 
+menu_item1 = MenuItem.new({
+  'eatery_id' => eatery1.id,
+  'burrito_id' => burrito1.id,
+  'price' => 8
+  })
+
+menu_item1.save
 
 binding.pry
 nil
