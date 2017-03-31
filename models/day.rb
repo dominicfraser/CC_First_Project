@@ -22,6 +22,11 @@ class Day
     SqlRunner.run(sql)
   end
 
+  def update()
+    sql = "UPDATE days SET (day_name) = ('#{@day_name}')"
+    SqlRunner.run(sql)
+  end
+
   ### CLASS METHODS
 
   def self.all()
