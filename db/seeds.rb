@@ -141,7 +141,7 @@ menu_item3.save
 menu_item4.save
 
 MenuItem.find(eatery1.id).each{|mi| 
-  mi.create_deal(monday.id,'30 off').save}
+  mi.create_deal(monday.id,'30% off').save}
 
 binding.pry
 nil
