@@ -18,7 +18,13 @@ class Burrito
   end
 
   def eateries()
-    
+    sql = "SELECT e.* FROM eateries e
+    INNER JOIN menu_items m
+    ON e.id=m.eatery_id
+    WHERE m.burrito_id = #{@id}"
+    eatery_array = SqlRunner.run(sql)
+    eatery_objects = eatery_array.map{|eatery| Eatery.new(eatery)}
+    return eatery_objects
   end
 
   ### CLASS METHODS
