@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS burritos;
 
 CREATE TABLE days (
   id SERIAL2 PRIMARY KEY,
-  day_name VARCHAR(255) --check IN?
+  day_name VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE eateries (
@@ -31,7 +31,7 @@ CREATE TABLE deals (
   id SERIAL4 PRIMARY KEY,
   day_id INT4 REFERENCES days(id),
   menu_item_id INT4 REFERENCES menu_items(id),
-  deal_name VARCHAR(255)
+  deal_name VARCHAR(255) NOT NULL UNIQUE
   -- applies_to
   -- operator
   -- amount
