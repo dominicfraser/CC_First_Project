@@ -19,4 +19,13 @@ class Deal
     @id = deals_array.first['id'].to_i
   end
 
+  ### CLASS METHODS
+
+  def self.all()
+    sql = "SELECT * FROM deals"
+    deals = SqlRunner.run(sql)
+    deal_objects = deals.map{|deal| Deal.new(deal)}
+    return deal_objects
+  end
+
 end
