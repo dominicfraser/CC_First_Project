@@ -29,10 +29,20 @@ def setup
     'price' => 9,
     'id' => 1
     })
+  @menu_item2 = MenuItem.new({
+    'eatery_id' => 1,
+    'burrito_id' => @burrito1.id,
+    'price' => 9,
+    'id' => 1
+    })
 end
 
 def test_menu_item_is_in_a_selection?
     assert_equal(true,@menu_item1.is_in_a_selection?(@expensive_core_burritos))
+end
+
+def test_menu_item_is_in_a_selection?
+    assert_equal(false,@menu_item2.is_in_a_selection?(@expensive_core_burritos))
 end
 
 end
