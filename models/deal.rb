@@ -28,4 +28,9 @@ class Deal
     return deal_objects
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM deals WHERE id = #{id}"
+    SqlRunner.run(sql)
+  end
+
 end
