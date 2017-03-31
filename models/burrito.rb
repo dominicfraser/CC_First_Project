@@ -34,6 +34,11 @@ class Burrito
     price = SqlRunner.run(sql).first['price'].to_f.round(2)
   end  
 
+  def delete()
+    sql = "DELETE FROM burritos WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
   ### CLASS METHODS
 
   def self.all()
