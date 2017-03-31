@@ -25,6 +25,7 @@ class MenuItem
       'deal_name' => deal_name,
       'menu_item_id' => self.id
       })
+
   end
 
   def is_in_a_selection?(selection)
@@ -38,7 +39,7 @@ class MenuItem
       }
     return result
   end
-  
+
   ### CLASS METHODS
 
   def self.all()

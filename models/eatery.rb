@@ -26,4 +26,11 @@ class Eatery
     return eateries_objects
   end
 
+  def self.all_menu_items()
+    sql = "SELECT * FROM menu_items WHERE eatery_id = #{self.id}"
+    mi = SqlRunner.run(sql)
+    mi_objects = mi.map{|mi| MenuItem.new(mi)}
+    return mi_objects
+  end
+
 end
