@@ -27,6 +27,8 @@ class MenuItem
       })
   end
 
+  def is_in_a_selection?(selection)
+
   ### CLASS METHODS
 
   def self.all()
