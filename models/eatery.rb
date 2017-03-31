@@ -22,6 +22,11 @@ class Eatery
     SqlRunner.run(sql)
   end
 
+  def update()
+    sql = "UPDATE eateries SET (eatery_name) = ('#{@eatery_name}') "
+    SqlRunner.run(sql)
+  end
+
   def all_menu_items()
     sql = "SELECT * FROM menu_items WHERE eatery_id = #{self.id}"
     mi = SqlRunner.run(sql)
