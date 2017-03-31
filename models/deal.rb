@@ -33,6 +33,11 @@ class Deal
     return deal_objects
   end
 
+  def self.all_on_day(day)
+    sql = ""
+  end
+
+
   def self.delete(id)
     sql = "DELETE FROM deals WHERE id = #{id}"
     SqlRunner.run(sql)
@@ -43,4 +48,9 @@ class Deal
     SqlRunner.run(sql)
   end
 
+  def map_deals(sql)
+    deals = SqlRunner.run(sql)
+    deal_objects = deals.map{|deal| Deal.new(deal)}
+    return deal_objects
+  end
 end
