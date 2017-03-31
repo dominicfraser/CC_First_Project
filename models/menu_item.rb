@@ -24,7 +24,7 @@ class MenuItem
   def self.all()
     sql = "SELECT * FROM menu_items"
     mis = SqlRunner.run(sql)
-    mi_objects = mis.map{|mi| Menu_Item.new(mi)}
+    mi_objects = mis.map{|mi| MenuItem.new(mi)}
     return mi_objects
   end
 
