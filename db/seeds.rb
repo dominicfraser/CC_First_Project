@@ -1,5 +1,9 @@
 require_relative('../models/day')
 require_relative('../models/eatery')
+require_relative('../models/burrito')
+require_relative('../models/menu_item')
+require_relative('../models/deal')
+
 require('pry-byebug')
 
 monday = Day.new({
