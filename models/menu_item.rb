@@ -19,12 +19,22 @@ class MenuItem
     @id = mi_array.first['id'].to_i
   end
 
+
+    deals_array = SqlRunner.run(sql)
+    @id = deals_array.first['id'].to_i
+  end
+
   def add_deal(day, deal_name)
     Deal.new({ 
       'day_id' => day,
       'deal_name' => deal_name,
       'menu_item_id' => self.id
-      }).save
+      })
+
+    sql = "INSERT INTO deals (day_id,deal_name,menu_item_id) VALUES (#{day}, #{deal_name}, #{self.id}) RETURNING id"
+    deals_array = SqlRunner.run(sql)
+    deal id ????
+
   end
 
   ### CLASS METHODS

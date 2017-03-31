@@ -140,11 +140,7 @@ menu_item2.save
 menu_item3.save
 menu_item4.save
 
-# percentagedeal1 = Deal.new({
-#   'day_id' => ,
-#   'menu_item_id' => ,
-#   'deal_name' => '30 percent off'
-#   })
+MenuItem.find(eatery1.id).each{|mi| mi.add_deal(monday.id,'30 off')}
 
 binding.pry
 nil
