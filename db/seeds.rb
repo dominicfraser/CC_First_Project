@@ -164,7 +164,7 @@ eatery2.all_menu_items.each{|mi|
   end
   }
 #Eatery3 Monday specials are reduced by £1   
-MenuItem.find(eatery3.id).each{|mi|
+eatery3.all_menu_items.each{|mi|
   if mi.is_in_a_selection?(cheap_core_burritos) || mi.is_in_a_selection?(expensive_core_burritos)
     nil
   else
