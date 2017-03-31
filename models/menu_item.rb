@@ -25,7 +25,6 @@ class MenuItem
       'deal_name' => deal_name,
       'menu_item_id' => self.id
       })
-
   end
 
   def is_in_a_selection?(selection)
@@ -38,6 +37,11 @@ class MenuItem
       end 
       }
     return result
+  end
+
+  def delete()
+    sql = "DELETE FROM menu_items WHERE id = #{@id}"
+    SqlRunner.run(sql)
   end
 
   ### CLASS METHODS
