@@ -2,13 +2,17 @@
   <h1>DEALS AVAILABLE</h1>
   <h3>At <%= @eatery.eatery_name %> on <%= @day.day_name %></h3>
 
-  <% @deals.each do |deal| %>
-  <p><%= deal.deal_name %></p>
-  <form action='/deals/<%= deal.id %>/<%= @eatery.id %>/<%= @day.id %>' method='get'>
-    <input type="submit" value="Burrito Details">
-  </form>
+  <% if @deals.size == 0 %>
+  <h4>No deals available on chosen date</h4>
+  <% else %>
+    <% @deals.each do |deal| %>
+    <p><%= deal.deal_name %></p>
+    <form action='/deals/<%= deal.id %>/<%= @eatery.id %>/<%= @day.id %>' method='get'>
+      <input type="submit" value="Burrito Details">
+    </form>
+    <% end %>
+    <hr>
   <% end %>
-  <hr>
 
 </div>
 
