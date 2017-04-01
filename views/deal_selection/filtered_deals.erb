@@ -1,0 +1,10 @@
+<div>
+  <h1>DEALS AVAILABLE</h1>
+  <h3>At <%= @eatery.eatery_name %> on <%= @day.day_name %></h3>
+
+  <% @deal.each do |deal| %>
+  <p><%= deal.deal_name %></p>
+  <% end %>
+  <hr>
+
+</div>
