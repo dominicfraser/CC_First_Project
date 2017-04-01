@@ -4,7 +4,9 @@
 
   <% if @deals.size == 0 %>
   <h4>No deals available on chosen date</h4>
+  
   <% else %>
+
     <% @deals.each do |deal| %>
     <p><%= deal.deal_name %></p>
     <form action='/deals/<%= deal.id %>/<%= @eatery.id %>/<%= @day.id %>' method='get'>
@@ -12,6 +14,7 @@
     </form>
     <% end %>
     <hr>
+
   <% end %>
 
 </div>

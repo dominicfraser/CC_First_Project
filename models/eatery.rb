@@ -2,7 +2,8 @@ require_relative('../db/sql_runner')
 
 class Eatery
 
-  attr_reader :id, :eatery_name
+  attr_reader :eatery_name
+  attr_accessor :id
 
   def initialize(eatery_hash)
     @id = eatery_hash['id'].to_i
