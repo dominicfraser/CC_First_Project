@@ -69,6 +69,19 @@ class Deal
     return deal_object
   end
 
+  def self.all_uniq_names
+    non_uniq = Deal.all
+    uniq = []
+    non_uniq.each {|deal| 
+      found_match = uniq.find{|entry| entry.deal_name == deal.deal_name}
+
+        if !found_match
+          uniq << deal
+        end
+      }
+    return uniq
+  end
+
   ## Helper
   def self.map_deals(sql)
     deals = SqlRunner.run(sql)

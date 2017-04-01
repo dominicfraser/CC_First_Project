@@ -2,11 +2,20 @@
   <h1>DEALS AVAILABLE</h1>
   <h3>At <%= @eatery.eatery_name %> on <%= @day.day_name %></h3>
 
-  <% if @deals.size == 0 %>
+  <% if @eatery.id == 1 %>
+  <!-- All Deals for All Eaters  -->
+  <% @all_deals.each do |deal| %>  
+    <p><%= deal.deal_name %></p>
+    <% end %>
+    <hr>
+
+  <% elsif @deals.size == 0%>
+  <!-- No deals returned from selection so: -->
   <h4>No deals available on chosen date</h4>
+
   
   <% else %>
-
+  <!-- All Deals for Selected Eatery -->
     <% @deals.each do |deal| %>
     <p><%= deal.deal_name %></p>
     <form action='/deals/<%= deal.id %>/<%= @eatery.id %>/<%= @day.id %>' method='get'>
