@@ -28,14 +28,7 @@ class MenuItem
   end
 
   def is_in_a_selection?(selection)
-    result = nil
-    selection.each{|burrito| 
-      if burrito.id == self.burrito_id
-        return true 
-      else
-        result = false
-      end 
-      }
+    result = selection.any?{|burrito| burrito.id == self.burrito_id }
     return result
   end
 
