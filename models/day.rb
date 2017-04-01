@@ -51,9 +51,9 @@ class Day
 
   def self.find(id)
     sql = "SELECT * FROM days WHERE id = #{id}"
-    day_array_of_pg = SqlRunner.run(sql)
-    day_objects = day_array_of_pg.map{|day| Day.new(day)}
-    return day_objects
+    day = SqlRunner.run(sql).first
+    result = Day.new(day)
+    return result
   end
 
 end
