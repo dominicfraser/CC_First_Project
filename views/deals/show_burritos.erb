@@ -1,7 +1,8 @@
 <div>
   <h2>Burritos available</h2>
   
-
-
+  <% @burritos.each do |burrito| %>
+  <p><%= burrito.burrito_name %></p>
+  <% end %>
 
 </div>
