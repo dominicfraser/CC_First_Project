@@ -4,7 +4,7 @@
 
   <% if @eatery.id == 1 %>
   <!-- All Deals for All Eaters  -->
-  <% @all_uniq_deals.each do |deal| %>  
+  <% @all_uniq_deals_day.each do |deal| %>  
     <p><%= deal.deal_name %></p>
     <% end %>
     <hr>

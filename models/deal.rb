@@ -51,7 +51,6 @@ class Deal
     return Deal.map_deals(sql)
   end
 
-
   def self.delete(id)
     sql = "DELETE FROM deals WHERE id = #{id}"
     SqlRunner.run(sql)
@@ -79,6 +78,20 @@ class Deal
           uniq << deal
         end
       }
+    return uniq
+  end
+
+  def self.all_uniq_names_on(day)
+    non_uniq = self.all_on_day(day)
+    uniq = []
+    for deal in non_uniq 
+      found_match = uniq.find{|entry| entry.deal_name == deal.deal_name}
+
+        if !found_match
+          uniq << deal
+        end
+    end
+
     return uniq
   end
 
