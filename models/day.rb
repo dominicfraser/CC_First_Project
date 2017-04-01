@@ -40,6 +40,18 @@ class Day
     return deal_objects
   end
 
+  def find_deal_names(eatery)
+    sql = "SELECT d.deal_name FROM deals d
+    INNER JOIN menu_items m
+    ON d.menu_item_id=m.id
+    INNER JOIN eateries e
+    ON m.eatery_id=e.id
+    WHERE d.day_id = #{@id} AND e.id = #{eatery.id} "
+    deal_names_hash = SqlRunner.run(sql).uniq
+    deal_names = deal_names_hash.map{|hash| hash['deal_name']}
+    return deal_names    
+  end
+
   ### CLASS METHODS
 
   def self.all()

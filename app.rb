@@ -22,6 +22,6 @@ end
 get '/deal_selection/filtered_deals' do
   @day = Day.find(params['day_id'])
   @eatery = Eatery.find(params['eatery_id'])
-  @deal = @day.find_all_deals(@eatery)
+  @deals = @day.find_deal_names(@eatery)
   erb(:'deal_selection/filtered_deals')
 end
