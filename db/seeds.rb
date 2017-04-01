@@ -158,7 +158,7 @@ eatery2.add_deal_to_all_mi(sunday,'50p off all Burritos at Eatery2 on Sundays')
 #Eatery3 Tuesday £1.50 
 eatery3.add_deal_to_all_mi(tuesday,'£1.50 off all Burritos at Eatery3 on Tuesdays')
 #Eatery1 Tuesday 2for1
-eatery1.add_deal_to_all_mi(monday,'2 for 1 on all Burritos at Eatery1 on Tuesdays')
+eatery1.add_deal_to_all_mi(tuesday,'2 for 1 on all Burritos at Eatery1 on Tuesdays')
 
 ##selection of burritos at a certain eatery on a certain day##
 #Eatery2 Thursday EC same as CC
