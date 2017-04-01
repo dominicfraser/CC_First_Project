@@ -27,6 +27,19 @@ class Day
     SqlRunner.run(sql)
   end
 
+  def find_all_deals(eatery)
+    sql = "SELECT d.* FROM deals d
+    INNER JOIN menu_items m
+    ON d.menu_item_id=m.id
+    INNER JOIN eateries e
+    ON m.eatery_id=e.id
+    WHERE d.id = #{@id} AND e.id = #{eatery.id} "
+    deals = SqlRunner.run(sql)
+    deal_objects = deals.map{|deal|
+      Deal.new(deal)}
+    return deal_objects
+  end
+
   ### CLASS METHODS
 
   def self.all()
