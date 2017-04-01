@@ -33,7 +33,7 @@ class Day
     ON d.menu_item_id=m.id
     INNER JOIN eateries e
     ON m.eatery_id=e.id
-    WHERE d.id = #{@id} AND e.id = #{eatery.id} "
+    WHERE d.day_id = #{@id} AND e.id = #{eatery.id} "
     deals = SqlRunner.run(sql)
     deal_objects = deals.map{|deal|
       Deal.new(deal)}
