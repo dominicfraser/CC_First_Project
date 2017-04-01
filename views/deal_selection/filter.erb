@@ -1,1 +1,18 @@
-<p>test</p>
+<div>
+  <form action=' ' method='post'>
+    <label for='day-select'>
+     Select a day:</label>
+       <select id='day-select' name='day_name'>
+       <% @days.each do |day| %>
+       <option value='<%= day.id %>'>
+       <%= day.day_name %>       
+       </option>
+       <% end %>
+     </select>
+
+    Select a location:
+
+  </form>
+
+</div>
+
