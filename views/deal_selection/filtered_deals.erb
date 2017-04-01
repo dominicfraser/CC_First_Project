@@ -4,8 +4,8 @@
 
   <% @deals.each do |deal| %>
   <p><%= deal.deal_name %></p>
-  <form action='/deals/<%= deal.id %>' method='get'>
-    <input type="submit" name="Show Full Details">
+  <form action='/deals/<%= deal.id %>/<%= @eatery.id %>/<%= @day.id %>' method='get'>
+    <input type="submit" value="Burrito Details">
   </form>
   <% end %>
   <hr>

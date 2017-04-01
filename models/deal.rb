@@ -24,6 +24,20 @@ class Deal
     SqlRunner.run(sql)
   end
 
+  def burritos_applies_to(eatery, day)
+    sql = "SELECT b.* FROM deals d
+    INNER JOIN menu_items m
+    ON d.menu_item_id=m.id
+    INNER JOIN eateries e
+    ON m.eatery_id=e.id
+    INNER JOIN burritos b
+    ON b.id=m.burrito_id 
+    WHERE d.day_id = #{day.id} AND e.id = #{eatery.id}"
+    burritos_pg = SqlRunner.run(sql)
+    burrito_ob = burritos_pg.map{|burrito| Burrito.new(burrito)}
+    return burrito_ob
+  end
+
   ### CLASS METHODS
 
   def self.all()
@@ -53,7 +67,7 @@ class Deal
     deal_object = Deal.new(deal)
     return deal_object
   end
-  
+
   ## Helper
   def self.map_deals(sql)
     deals = SqlRunner.run(sql)
