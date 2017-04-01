@@ -1,18 +1,26 @@
 <div>
+  <p>
   <form action=' ' method='post'>
     <label for='day-select'>
-     Select a day:</label>
-       <select id='day-select' name='day_name'>
-       <% @days.each do |day| %>
-       <option value='<%= day.id %>'>
-       <%= day.day_name %>       
-       </option>
+     Select a day: </label>
+     <select id='day-select' name='day_name'>
+         <% @days.each do |day| %>
+         <option value='<%= day.id %>'>
+         <%= day.day_name %>       
+         </option>
        <% end %>
      </select>
-
-    Select a location:
-
+  </p>
+  <p>
+     <label for='eatery-select'>Select a location: </label>
+     <select id='eatery-select' name='eatery_name'>
+      <% @eateries.each do |eatery| %>
+      <option value='<%= eatery.id %>'>
+        <%= eatery.eatery_name %>
+      </option>
+       <% end %>
+     </select>
   </form>
-
+  </p>
 </div>
 
