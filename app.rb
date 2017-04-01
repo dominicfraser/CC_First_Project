@@ -3,7 +3,7 @@ require('sinatra/contrib/all')
 
 
 get '/' do 
-  erb(:index)
+  erb(:index, :layout => :no_nav)
 end
 
 get '' do
