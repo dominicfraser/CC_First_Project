@@ -1,6 +1,6 @@
 require('sinatra')
 require('sinatra/contrib/all')
-# require_relative('controllers/deals_controller')
+require_relative('controllers/deals_controller')
 require_relative('models/day')
 require_relative('models/eatery')
 require_relative('models/deal')
@@ -22,6 +22,6 @@ end
 get '/deal_selection/filtered_deals' do
   @day = Day.find(params['day_id'])
   @eatery = Eatery.find(params['eatery_id'])
-  @deals = @day.find_deal_names(@eatery)
+  @deals = @day.find_uniq_deals_by_name_at(@eatery)
   erb(:'deal_selection/filtered_deals')
 end

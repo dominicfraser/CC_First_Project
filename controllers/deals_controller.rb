@@ -1,3 +1,7 @@
-require_relative('models/day')
-require_relative('models/eatery')
+require_relative('../models/deal')
+
+get '/deals/:id' do
+
+erb(:'deals/show')
+end
 

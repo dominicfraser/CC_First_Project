@@ -40,6 +40,21 @@ class Day
     return deal_objects
   end
 
+  def find_uniq_deals_by_name_at(eatery)
+    non_uniq = self.find_all_deals(eatery)
+    uniq = []
+
+    for deal in non_uniq 
+      found_match = uniq.find{|entry| entry.deal_name == deal.deal_name}
+      #always returns something, even if just nil
+      #each: do something as many times as there are things in the array, so when empty it does nothing. if there is something there it compares every value with every value and does an action each time (creating too many << values), whereas .find does it just once then starts the above loop again.
+      if !found_match
+        uniq << deal
+      end
+    end
+    return uniq
+  end
+
   def find_deal_names(eatery)
     sql = "SELECT d.deal_name FROM deals d
     INNER JOIN menu_items m
