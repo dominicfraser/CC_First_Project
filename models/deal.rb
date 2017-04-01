@@ -70,7 +70,7 @@ class Deal
   end
 
   def self.all_uniq_names
-    non_uniq = Deal.all
+    non_uniq = self.all
     uniq = []
     non_uniq.each {|deal| 
       found_match = uniq.find{|entry| entry.deal_name == deal.deal_name}
