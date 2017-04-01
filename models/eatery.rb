@@ -48,4 +48,11 @@ class Eatery
     return eateries_objects
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM eateries WHERE id = #{id}"
+    eateries = SqlRunner.run(sql)
+    eateries_objects = eateries.map{|eatery| Eatery.new(eatery)}
+    return eateries_objects
+  end
+
 end
