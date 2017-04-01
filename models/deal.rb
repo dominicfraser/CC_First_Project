@@ -47,6 +47,13 @@ class Deal
     SqlRunner.run(sql)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM deals WHERE id = #{id}"
+    deal = SqlRunner.run(sql).first
+    deal_object = Deal.new(deal)
+    return deal_object
+  end
+  
   ## Helper
   def self.map_deals(sql)
     deals = SqlRunner.run(sql)
