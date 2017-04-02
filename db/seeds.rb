@@ -9,9 +9,13 @@ require('pry-byebug')
 ### MUST BE FIRST SEEDED
 all_eateries = Eatery.new({
   'eatery_name' => 'All Eateries',
-  'id' => -1
   })
 all_eateries.save
+
+all_week = Day.new({
+  'day_name' => 'All Week'
+  })
+all_week.save
 ###
 
 monday = Day.new({
