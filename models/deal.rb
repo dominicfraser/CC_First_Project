@@ -34,9 +34,21 @@ class Deal
     INNER JOIN burritos b
     ON b.id=m.burrito_id 
     WHERE d.day_id = #{day.id} AND e.id = #{eatery.id}"
-    burritos_pg = SqlRunner.run(sql)
-    burrito_ob = burritos_pg.map{|burrito| Burrito.new(burrito)}
-    return burrito_ob
+    burrito_pgs = SqlRunner.run(sql)
+    burrito_obs = burrito_pgs.map{|burrito| Burrito.new(burrito)}
+    return burrito_obs
+  end
+
+  def eatery_applies_to
+    sql = "SELECT e.* FROM deals d
+    INNER JOIN menu_items m
+    ON d.menu_item_id=m.id
+    INNER JOIN eateries e
+    ON m.eatery_id=e.id
+    WHERE d.day_id = #{self.day_id} AND m.id = #{self.menu_item_id}"
+    eateries_pgs = SqlRunner.run(sql)
+    eatery_obs = eateries_pgs.map{|burrito| Eatery.new(burrito)}
+    return eatery_obs
   end
 
   ### CLASS METHODS
