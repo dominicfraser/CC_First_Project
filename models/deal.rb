@@ -26,8 +26,7 @@ class Deal
     SqlRunner.run(sql)
   end
 
-  def burritos_applies_to(eatery, day)
-    # if self.burrito_cat
+  def burritos_when_b_cat_all(eatery, day)
     if day.id == 1
       sql = "SELECT b.* FROM deals d
       INNER JOIN menu_items m
@@ -55,6 +54,24 @@ class Deal
       INNER JOIN burritos b
       ON b.id=m.burrito_id 
       WHERE d.day_id = #{day.id} AND e.id = #{eatery.id}"
+      burrito_pgs = SqlRunner.run(sql)
+      burrito_obs = burrito_pgs.map{|burrito| Burrito.new(burrito)}
+      return burrito_obs
+    end
+  end
+
+  def burritos_applies_to(eatery, day)
+    if self.burrito_cat == 1 ##when category is 'all'
+      self.burritos_when_b_cat_all(eatery, day)
+    else
+      sql = "SELECT b.* FROM deals d
+      INNER JOIN menu_items m
+      ON d.menu_item_id=m.id
+      INNER JOIN eateries e
+      ON m.eatery_id=e.id
+      INNER JOIN burritos b
+      ON b.id=m.burrito_id 
+      WHERE e.id = #{eatery.id} AND d.burrito_cat = #{self.burrito_cat}"
       burrito_pgs = SqlRunner.run(sql)
       burrito_obs = burrito_pgs.map{|burrito| Burrito.new(burrito)}
       return burrito_obs
