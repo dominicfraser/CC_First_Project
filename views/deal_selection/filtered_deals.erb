@@ -12,6 +12,21 @@
     <% end %>
     <hr>
 
+  <% elsif @day.id == 1 %>
+  <!-- All week for #eatery -->
+    <% if Day.find_all_week_for(@eatery).size == 0 %>
+      <h4>No deals exist at this eatery</h4>
+    <% else %>
+      <% Day.find_all_week_for(@eatery).each do |deal| %>
+        <p><%= deal.deal_name %></p>
+        <form action='/deals/<%= deal.id %>/<%= @eatery.id %>/<%= @day.id %>' method='get'>
+          <input type="submit" value="Burrito Details">
+        </form>
+        <% end %>
+        <hr>
+    <% end %>
+
+
   <% elsif @deals.size == 0 %>
   <!-- No deals returned from selection so: -->
   <h4>No deals available on chosen date</h4>
