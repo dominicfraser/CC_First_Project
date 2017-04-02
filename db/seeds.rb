@@ -7,15 +7,17 @@ require_relative('../models/deal')
 require('pry-byebug')
 
 ### MUST BE FIRST SEEDED
+all_week = Day.new({
+  'day_name' => 'All Week'
+  })
+all_week.save
+
 all_eateries = Eatery.new({
   'eatery_name' => 'All Eateries',
   })
 all_eateries.save
 
-all_week = Day.new({
-  'day_name' => 'All Week'
-  })
-all_week.save
+all_categories = 
 ###
 
 monday = Day.new({

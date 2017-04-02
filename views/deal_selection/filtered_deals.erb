@@ -3,7 +3,7 @@
   <h3>At <%= @eatery.eatery_name %> on <%= @day.day_name %></h3>
 
   <% if @eatery.id == 1 %>
-  <!-- All Deals for All Eateries  -->
+  <!-- All Deals for All Eateries on a single Day  -->
   <% @all_uniq_deals_day.each do |deal| %>  
     <p><%= deal.deal_name %></p>
       <form action='/deals/<%= deal.id %>/<%= deal.eatery_applies_to.id %>/<%= deal.day_id %>' method='get'>

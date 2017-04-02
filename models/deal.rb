@@ -26,17 +26,37 @@ class Deal
   end
 
   def burritos_applies_to(eatery, day)
-    sql = "SELECT b.* FROM deals d
-    INNER JOIN menu_items m
-    ON d.menu_item_id=m.id
-    INNER JOIN eateries e
-    ON m.eatery_id=e.id
-    INNER JOIN burritos b
-    ON b.id=m.burrito_id 
-    WHERE d.day_id = #{day.id} AND e.id = #{eatery.id}"
-    burrito_pgs = SqlRunner.run(sql)
-    burrito_obs = burrito_pgs.map{|burrito| Burrito.new(burrito)}
-    return burrito_obs
+    if day.id == 1
+      sql = "SELECT b.* FROM deals d
+      INNER JOIN menu_items m
+      ON d.menu_item_id=m.id
+      INNER JOIN eateries e
+      ON m.eatery_id=e.id
+      INNER JOIN burritos b
+      ON b.id=m.burrito_id 
+      WHERE e.id = #{eatery.id}"
+      burrito_pgs = SqlRunner.run(sql)
+      burrito_obs_non_uniq = burrito_pgs.map{|burrito| Burrito.new(burrito)}
+      uniq = []
+      burrito_obs_non_uniq.each{|burrito|
+        match = uniq.find{|entry| entry.id == burrito.id}
+        uniq << burrito if !match
+      }
+      return uniq
+
+    else
+      sql = "SELECT b.* FROM deals d
+      INNER JOIN menu_items m
+      ON d.menu_item_id=m.id
+      INNER JOIN eateries e
+      ON m.eatery_id=e.id
+      INNER JOIN burritos b
+      ON b.id=m.burrito_id 
+      WHERE d.day_id = #{day.id} AND e.id = #{eatery.id}"
+      burrito_pgs = SqlRunner.run(sql)
+      burrito_obs = burrito_pgs.map{|burrito| Burrito.new(burrito)}
+      return burrito_obs
+    end
   end
 
   def eatery_applies_to
