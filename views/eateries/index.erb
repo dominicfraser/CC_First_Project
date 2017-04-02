@@ -4,9 +4,11 @@
     <% if eatery.eatery_name != 'All Eateries' %>
     <p><%= eatery.eatery_name %> </p>
     <% end %>
- <!--    <form action='/deal_selection/filtered_deals' method='get'>
+    <form action='/deal_selection/filtered_deals' method='get'>
+      <input type="hidden" name="day_id" value="1">
+      <input type="hidden" name="eatery_id" value="<%= eatery.id %>">
       <input type='submit' value='Show All Deals'>      
-    </form> -->
+    </form>
   <hr>
   <% end %>
 
