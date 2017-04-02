@@ -1,0 +1,10 @@
+<div>
+  <h1>ALL EATERIES</h1>
+  <% @eateries.each do |eatery| %>
+    <% if eatery.eatery_name != 'All Eateries' %>
+    <p><%= eatery.eatery_name %> </p>
+    <% end %>
+  <hr>
+  <% end %>
+
+</div>
