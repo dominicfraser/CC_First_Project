@@ -180,7 +180,7 @@ eatery3.all_menu_items.each{|mi|
   if mi.is_in_a_selection?(cheap_core_burritos) || mi.is_in_a_selection?(expensive_core_burritos)
     nil
   else
-    mi.create_deal(monday.id,'Specials are all reduced by £1').save
+    mi.create_deal(monday.id,'Specials are all reduced by £1 at Eatery3 on Mondays').save
   end
 }
 

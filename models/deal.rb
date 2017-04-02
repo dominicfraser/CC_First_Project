@@ -78,6 +78,7 @@ class Deal
           uniq << deal
         end
       }
+    uniq.sort! {|x,y| x.day_id <=> y.day_id}
     return uniq
   end
 
@@ -91,7 +92,6 @@ class Deal
           uniq << deal
         end
     end
-
     return uniq
   end
 
