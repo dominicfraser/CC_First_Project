@@ -4,9 +4,6 @@
 
   <% if @eatery.id == 1 %>
   <!-- All Deals for All Eateries on a single Day  -->
-    <% if @deals.size == 0 %>
-      <h4>No deals available on chosen date</h4>
-    <% else %>
       <% @all_uniq_deals_day.each do |deal| %>  
         <p><%= deal.deal_name %></p>
           <form action='/deals/<%= deal.id %>/<%= deal.eatery_applies_to.id %>/<%= deal.day_id %>' method='get'>
@@ -14,7 +11,6 @@
           </form>
         <% end %>
         <hr>
-    <% end %>
 
   <% elsif @day.id == 1 %>
   <!-- All week for certain #eatery -->
