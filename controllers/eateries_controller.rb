@@ -4,6 +4,6 @@ require_relative('../models/eatery')
 require_relative('../models/day')
 
 get '/eateries/index' do
-  @eateries = Eatery.all
+  @eateries = Eatery.all_without_first
   erb(:'eateries/index')
 end
