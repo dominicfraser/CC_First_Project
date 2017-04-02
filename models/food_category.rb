@@ -4,7 +4,7 @@ class FoodCategory
 
   attr_reader :id, :category
 
-  def initaliaze(cat_hash)
+  def initialize(cat_hash)
     @id = cat_hash['id'].to_i
     @category = cat_hash['category']
   end

@@ -19,11 +19,12 @@ class MenuItem
     @id = mi_array.first['id'].to_i
   end
 
-  def create_deal(day, deal_name)
+  def create_deal(day, deal_name, bur_cat)
     Deal.new({ 
       'day_id' => day,
       'deal_name' => deal_name,
-      'menu_item_id' => self.id
+      'menu_item_id' => self.id,
+      'burrito_cat' => bur_cat.id
       })
   end
 

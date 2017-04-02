@@ -3,6 +3,7 @@ require_relative('../models/eatery')
 require_relative('../models/burrito')
 require_relative('../models/menu_item')
 require_relative('../models/deal')
+require_relative('../models/food_category')
 
 require('pry-byebug')
 
@@ -17,8 +18,28 @@ all_eateries = Eatery.new({
   })
 all_eateries.save
 
-all_categories = 
+all_categories = FoodCategory.new({
+  'category' => 'All'
+  })
+all_categories.save
 ###
+
+classic = FoodCategory.new({
+  'category' => 'Classic'
+  })
+classic_plus = FoodCategory.new({
+  'category' => 'Classic Plus'
+  })
+deluxe = FoodCategory.new({
+  'category' => 'Deluxe'
+  })
+special = FoodCategory.new({
+  'category' => 'Special'
+  })
+classic.save
+classic_plus.save
+deluxe.save
+special.save
 
 monday = Day.new({
   'day_name' => 'Monday'
@@ -69,34 +90,44 @@ eatery2.save
 eatery3.save
 
 burrito1 = Burrito.new({
-  'burrito_name' => 'burrito1'
+  'burrito_name' => 'burrito1',
+  'burrito_cat' => classic.id
   })
 burrito2 = Burrito.new({
-  'burrito_name' => 'burrito2'
+  'burrito_name' => 'burrito2',
+  'burrito_cat' => classic.id
   })
 burrito3 = Burrito.new({
-  'burrito_name' => 'burrito3'
+  'burrito_name' => 'burrito3',
+  'burrito_cat' => classic.id
   })
 burrito4 = Burrito.new({
-  'burrito_name' => 'burrito4'
+  'burrito_name' => 'burrito4',
+  'burrito_cat' => classic_plus.id
   })
 burrito5 = Burrito.new({
-  'burrito_name' => 'burrito5'
+  'burrito_name' => 'burrito5',
+  'burrito_cat' => classic_plus.id
   })
 burrito6 = Burrito.new({
-  'burrito_name' => 'burrito6'
+  'burrito_name' => 'burrito6',
+  'burrito_cat' => classic_plus.id
   })
 burrito7 = Burrito.new({
-  'burrito_name' => 'burrito7'
+  'burrito_name' => 'burrito7',
+  'burrito_cat' => deluxe.id
   })
 burrito8 = Burrito.new({
-  'burrito_name' => 'burrito8'
+  'burrito_name' => 'burrito8',
+  'burrito_cat' => deluxe.id
   })
 burrito9 = Burrito.new({
-  'burrito_name' => 'burrito9'
+  'burrito_name' => 'burrito9',
+  'burrito_cat' => deluxe.id
   })
 burrito10 = Burrito.new({
-  'burrito_name' => 'burrito10'
+  'burrito_name' => 'burrito10',
+  'burrito_cat' => special.id
   })
 
 burrito1.save
@@ -160,25 +191,25 @@ menu_item4.save
 
 ##all burritos at a certain eatery on a certain day##
 #Eatery1 Monday 20% 
-eatery1.add_deal_to_all_mi(monday,'20% off all Burritos at Eatery1 on Mondays')
+eatery1.add_deal_to_all_mi(monday,'20% off all Burritos at Eatery1 on Mondays',all_categories)
 #Eatery2 Wednesday 10% 
-eatery2.add_deal_to_all_mi(wednesday,'10% off all Burritos at Eatery2 on Wednesdays')
+eatery2.add_deal_to_all_mi(wednesday,'10% off all Burritos at Eatery2 on Wednesdays',all_categories)
 #Eatery3 Friday 15%
-eatery3.add_deal_to_all_mi(friday,'15% off all Burritos at Eatery3 on Fridays')
+eatery3.add_deal_to_all_mi(friday,'15% off all Burritos at Eatery3 on Fridays',all_categories)
 #Eatery1 Thursday £1 
-eatery1.add_deal_to_all_mi(thursday,'£1 off all Burritos at Eatery1 on Thursdays')
+eatery1.add_deal_to_all_mi(thursday,'£1 off all Burritos at Eatery1 on Thursdays',all_categories)
 #Eatery2 Sunday 50p
-eatery2.add_deal_to_all_mi(sunday,'50p off all Burritos at Eatery2 on Sundays')
+eatery2.add_deal_to_all_mi(sunday,'50p off all Burritos at Eatery2 on Sundays',all_categories)
 #Eatery3 Tuesday £1.50 
-eatery3.add_deal_to_all_mi(tuesday,'£1.50 off all Burritos at Eatery3 on Tuesdays')
+eatery3.add_deal_to_all_mi(tuesday,'£1.50 off all Burritos at Eatery3 on Tuesdays',all_categories)
 #Eatery1 Tuesday 2for1
-eatery1.add_deal_to_all_mi(tuesday,'2 for 1 on all Burritos at Eatery1 on Tuesdays')
+eatery1.add_deal_to_all_mi(tuesday,'2 for 1 on all Burritos at Eatery1 on Tuesdays',all_categories)
 
 ##selection of burritos at a certain eatery on a certain day##
 #Eatery2 Thursday EC same as CC
 eatery2.all_menu_items.each{|mi|
   if mi.is_in_a_selection?(expensive_core_burritos)
-    mi.create_deal(thursday.id,'Expensive Core Burritos same price as Cheap Core Burritos at Eatery2 on Thursdays').save
+    mi.create_deal(thursday.id,'Expensive Core Burritos same price as Cheap Core Burritos at Eatery2 on Thursdays',classic_plus).save
   end
   }
 #Eatery3 Monday specials are reduced by £1   
@@ -186,11 +217,9 @@ eatery3.all_menu_items.each{|mi|
   if mi.is_in_a_selection?(cheap_core_burritos) || mi.is_in_a_selection?(expensive_core_burritos)
     nil
   else
-    mi.create_deal(monday.id,'Specials are all reduced by £1 at Eatery3 on Mondays').save
+    mi.create_deal(monday.id,'Specials are all reduced by £1 at Eatery3 on Mondays',special).save
   end
 }
-
-
 
 binding.pry
 nil
