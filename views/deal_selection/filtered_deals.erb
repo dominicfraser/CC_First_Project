@@ -4,16 +4,20 @@
 
   <% if @eatery.id == 1 %>
   <!-- All Deals for All Eateries on a single Day  -->
-  <% @all_uniq_deals_day.each do |deal| %>  
-    <p><%= deal.deal_name %></p>
-      <form action='/deals/<%= deal.id %>/<%= deal.eatery_applies_to.id %>/<%= deal.day_id %>' method='get'>
-        <input type="submit" value="Burrito Details">
-      </form>
+    <% if @deals.size == 0 %>
+      <h4>No deals available on chosen date</h4>
+    <% else %>
+      <% @all_uniq_deals_day.each do |deal| %>  
+        <p><%= deal.deal_name %></p>
+          <form action='/deals/<%= deal.id %>/<%= deal.eatery_applies_to.id %>/<%= deal.day_id %>' method='get'>
+            <input type="submit" value="Burrito Details">
+          </form>
+        <% end %>
+        <hr>
     <% end %>
-    <hr>
 
   <% elsif @day.id == 1 %>
-  <!-- All week for #eatery -->
+  <!-- All week for certain #eatery -->
     <% if Day.find_all_week_for(@eatery).size == 0 %>
       <h4>No deals exist at this eatery</h4>
     <% else %>
@@ -33,7 +37,7 @@
 
   
   <% else %>
-  <!-- All Deals for Selected Eatery -->
+  <!-- All Deals for Selected Eatery on certain day-->
     <% @deals.each do |deal| %>
     <p><%= deal.deal_name %></p>
     <form action='/deals/<%= deal.id %>/<%= @eatery.id %>/<%= @day.id %>' method='get'>
