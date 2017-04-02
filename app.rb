@@ -20,13 +20,13 @@ get '/deal_selection/filter' do
   erb(:'deal_selection/filter')
 end
 
-get '/deal_selection/filtered_deals/:eid/:did' do
+get '/deal_selection/filtered_deals' do
   @day = Day.find(params['day_id'])
   @eatery = Eatery.find(params['eatery_id'])
   @deals = @day.find_uniq_deals_by_name_at(@eatery)
   @all_uniq_deals_day = Deal.all_uniq_names_on(@day)
 
-  redirect 'deals/index' unless params[:eid] != 1 && params[:did] != 1 
+  redirect 'deals/index' unless @eatery.id != 1 && @day.id != 1 
   erb(:'deal_selection/filtered_deals')
 
 
