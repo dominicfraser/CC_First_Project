@@ -46,9 +46,9 @@ class Deal
     INNER JOIN eateries e
     ON m.eatery_id=e.id
     WHERE d.day_id = #{self.day_id} AND m.id = #{self.menu_item_id}"
-    eateries_pgs = SqlRunner.run(sql)
-    eatery_obs = eateries_pgs.map{|burrito| Eatery.new(burrito)}
-    return eatery_obs
+    eatery_pg = SqlRunner.run(sql).first
+    eatery = Eatery.new(eatery_pg)
+    return eatery
   end
 
   ### CLASS METHODS
