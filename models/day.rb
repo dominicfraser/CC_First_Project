@@ -83,4 +83,24 @@ class Day
     return result
   end
 
+  def self.find_all_week_for(eatery)
+    sql = "SELECT d.* FROM deals d
+    INNER JOIN menu_items m
+    ON d.menu_item_id=m.id
+    INNER JOIN eateries e
+    ON m.eatery_id=e.id
+    WHERE e.id = #{eatery.id} "
+    deal_pgs = SqlRunner.run(sql)
+    deal_obs_non_uniq = deal_pgs.map{|deal| Deal.new(deal)}
+    uniq = []
+    for deal in deal_obs_non_uniq 
+      found_match = uniq.find{|entry| entry.deal_name == deal.deal_name}
+      
+      if !found_match
+        uniq << deal
+      end
+    end
+    return uniq
+  end
+  
 end
