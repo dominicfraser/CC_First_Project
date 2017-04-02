@@ -3,19 +3,20 @@ require('pry-byebug')
 
 class Deal
 
-  attr_reader :id, :day_id, :menu_item_id, :deal_name
+  attr_reader :id, :day_id, :menu_item_id, :deal_name, :burrito_cat
 
   def initialize(deal_hash)
     @id = deal_hash['id'].to_i
     @day_id = deal_hash['day_id'].to_i
     @menu_item_id = deal_hash['menu_item_id'].to_i
     @deal_name = deal_hash['deal_name']
+    @burrito_cat = deal_hash['burrito_cat'].to_i
   end
 
   ### INSTANCE METHODS
 
   def save()
-    sql = "INSERT INTO deals (day_id,menu_item_id,deal_name) VALUES (#{@day_id},#{@menu_item_id},'#{@deal_name}') RETURNING id "
+    sql = "INSERT INTO deals (day_id,menu_item_id,deal_name,burrito_cat) VALUES (#{@day_id},#{@menu_item_id},'#{@deal_name}',#{@burrito_cat}) RETURNING id "
     deals_array = SqlRunner.run(sql)
     @id = deals_array.first['id'].to_i
   end
@@ -26,6 +27,7 @@ class Deal
   end
 
   def burritos_applies_to(eatery, day)
+    # if self.burrito_cat
     if day.id == 1
       sql = "SELECT b.* FROM deals d
       INNER JOIN menu_items m

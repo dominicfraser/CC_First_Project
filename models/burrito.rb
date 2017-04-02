@@ -2,17 +2,18 @@ require_relative('../db/sql_runner')
 
 class Burrito
 
-  attr_reader :id, :burrito_name
+  attr_reader :id, :burrito_name, :burrito_cat
 
   def initialize(burrito_hash)
     @id = burrito_hash['id'].to_i
     @burrito_name = burrito_hash['burrito_name']
+    @burrito_cat = burrito_hash['burrito_cat'].to_i
   end
 
   ### INSTANCE METHODS
 
   def save()
-    sql = "INSERT INTO burritos (burrito_name) VALUES ('#{@burrito_name}') RETURNING id"
+    sql = "INSERT INTO burritos (burrito_name,burrito_cat) VALUES ('#{@burrito_name}',#{@burrito_cat}) RETURNING id"
     burritos_array = SqlRunner.run(sql)
     @id = burritos_array.first['id'].to_i
   end
@@ -23,7 +24,7 @@ class Burrito
   end
 
   def update()
-    sql = "UPDATE burritos SET (burrito_name) = ('#{@burrito_name}') "
+    sql = "UPDATE burritos SET (burrito_name,burrito_cat) = ('#{@burrito_name}',#{@burrito_cat}) "
     SqlRunner.run(sql)
   end
 
