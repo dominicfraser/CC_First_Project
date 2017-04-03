@@ -1,7 +1,7 @@
 <div>
   <form method='post' action='admin/menu_items'>
     <label for='eatery-id'>Eatery:</label>
-    <select id='eatery-id' name='eatery_id'>
+    <select required id='eatery-id' name='eatery_id'>
       <% @eateries.each do |eatery| %>
       <option value='eatery.id'><%= eatery.eatery_name %></option>
       <% end %>
@@ -10,8 +10,8 @@
 
     <label for='burrito-id'>Burrito</label>
     <select id='burrito-id' name='burrito_id'>
-      <%= @burritos.each do |burrito| %>
-      <option value='<%= burrito.id %>'>< burrito.burrito_name  %></option>
+      <% @burritos.each do |burrito| %>
+      <option value='<%= burrito.id %>' <%= 'selected' if @burrito_id == burrito.id %> ><%= burrito.burrito_name %></option>
       <% end %>
     </select>
     <br>

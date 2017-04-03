@@ -28,17 +28,18 @@ end
 get '/admin/menu_items/new/:bid' do
   @eateries = Eatery.all 
   @burritos = Burrito.all
-  @burrito_id = params[:bid]
+  @burrito_id = params[:bid].to_i
   erb(:'admin/menu_items/new', :layout => :admin_layout)
-# send hidden value?
 end
 
 post 'admin/menu_items' do
 @menu_item = MenuItem.new(params)
 @menu_item.save
 
-erb()
+params['add'] == 'y' ? (redirect "/admin/menu_items/new/#{@burrito.id}") : erb(:'admin/main_menu', :layout => :admin_layout)
 end
+
+
 
 ##EATERIES
 get '/admin/eateries/index' do
