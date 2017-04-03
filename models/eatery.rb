@@ -34,6 +34,13 @@ class Eatery
     return mi_objects
   end
 
+  def create_deal_for_certain_category(day, deal_name,bur_cat)
+    self.all_menu_items.each{ |mi|
+      mi.create_deal(day, deal_name,bur_cat).save }
+  end
+
+
+  #for adding to all categories of mi
   def add_deal_to_all_mi(day, deal_name,bur_cat)
     self.all_menu_items.each{|mi|
       mi.create_deal(day.id,deal_name,bur_cat).save}
