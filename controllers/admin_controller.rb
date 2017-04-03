@@ -93,7 +93,7 @@ end
 
 post '/admin/deals/new' do
   @eatery = Eatery.find(params['id'])
-  @days = Day.all 
+  @days = Day.all_without_first
   @categories = FoodCategory.all_without_first
 
   erb(:'admin/deals/new', :layout => :admin_layout)
