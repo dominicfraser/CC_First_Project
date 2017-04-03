@@ -63,12 +63,13 @@ get '/admin/eateries/new' do
 end
 
 get '/admin/eateries/:id/edit' do
+  @eatery = Eatery.find(params[:id])
   erb(:'admin/eateries/edit', :layout => :admin_layout)
 end
 
 post '/admin/eateries/:id' do
   @eatery = Eatery.new(params)
-  @eatery. #takes the id from it being thrown in in the edit section
+  @eatery.update #takes the id from it being thrown in in the edit section
   redirect 'admin/eateries/index'
 end
 

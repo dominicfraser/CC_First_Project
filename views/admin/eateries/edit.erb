@@ -1,0 +1,13 @@
+<div>
+  <h1>Update Eatery</h1>
+  <form method='post' action='/admin/eateries/<%= @eatery.id %>'>
+    
+    <label for='eatery-name'>Name:</label>
+    <input required type='text' name='eatery_name' value='<%= @eatery.eatery_name %>'>
+    <br>
+
+   <input type='submit' value='Update Eatery'>
+
+
+  </form>
+</div>
