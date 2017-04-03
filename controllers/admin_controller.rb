@@ -62,6 +62,17 @@ get '/admin/eateries/new' do
   erb(:'admin/eateries/new', :layout => :admin_layout)
 end
 
+get '/admin/eateries/:id/edit' do
+  erb(:'admin/eateries/edit', :layout => :admin_layout)
+end
+
+post '/admin/eateries/:id' do
+  @eatery = Eatery.new(params)
+  @eatery. #takes the id from it being thrown in in the edit section
+  redirect 'admin/eateries/index'
+end
+
+
 post '/admin/eateries' do
   @eatery = Eatery.new(params)
   @eatery.save
