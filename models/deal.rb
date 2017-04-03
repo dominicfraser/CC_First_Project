@@ -146,9 +146,13 @@ class Deal
     return uniq
   end
 
-  def self.delete_all_deals_of_same_name(id_of_one_deal_that_has_name)
-    deal_name_query = "SELECT deal_name FROM deals WHERE id = #{id_of_one_deal_that_has_name} "
-    deal_name = SqlRunner.run(deal_name_query)
+  def self.find_deal_name_from_id(id)
+    deal_name_query = "SELECT deal_name FROM deals WHERE id = #{id} "
+    return deal_name = SqlRunner.run(deal_name_query).first['deal_name']
+  end
+
+  def self.delete_all_deals_of_same_name(id)
+    deal_name = self.find_deal_name_from_id(id)
 
     sql = "DELETE FROM deals WHERE deal_name = '#{deal_name}' "
     SqlRunner.run(sql)
