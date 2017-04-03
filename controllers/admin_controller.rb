@@ -103,7 +103,7 @@ post '/admin/deals/:eid' do
   @eatery = Eatery.find(params[:eid])
   @deals = Deal.all_uniq_names
 
-  params[:burrito_cat] != 1 ? @eatery.add_deal_to_all_mi((Day.find(params[:day_id])),"#{params[:deal_name]}",FoodCategory.find(params[:burrito_cat]) ) : nil
+  params[:burrito_cat].to_i == 1 ? @eatery.add_deal_to_all_mi((Day.find(params[:day_id])),"#{params[:deal_name]}",FoodCategory.find(params[:burrito_cat]) ) : Eatery.new({'eatery_name' => 'test2'}).save
 
   redirect 'admin/deals/index'
 end
