@@ -1,0 +1,26 @@
+<div>
+  <form method='post' action='admin/menu_items'>
+    <label for='eatery-id'>Eatery:</label>
+    <select id='eatery-id' name='eatery_id'>
+      <% @eateries.each do |eatery| %>
+      <option value='eatery.id'><%= eatery.eatery_name %></option>
+      <% end %>
+    </select>
+    <br>
+
+    <label for='burrito-id'>Burrito</label>
+
+    <br>
+
+    <label for='price'>Price:</label>
+    <input id='price' type='number' name='price' min='0'>
+    <br>
+
+    <label for='create-m-i'>Add Another Burrito?</label>
+    <input type='checkbox' name='add' value='y'>
+    <br>
+
+  <input type='submit' name='Add to Menu'>
+  </form>
+
+</div>

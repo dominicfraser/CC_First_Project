@@ -16,12 +16,26 @@ get '/admin/burritos/new' do
   erb(:'admin/burritos/new', :layout => :admin_layout)
 end
 
-post '/admin/burrito' do
+post '/admin/burritos' do
   @burrito = Burrito.new(params)
   @burrito.save
 
   params['add'] == 'y' ? erb(:'admin/menu_items/new', :layout => :admin_layout) : erb(:'admin/main_menu', :layout => :admin_layout) 
   #erb(:'admin/burrito/create')
+end
+
+##MENU ITEMS
+get '/admin/menu_items/new' do
+  @eateries = Eatery.all 
+  erb(:'admin/menu_items/new')
+# send hidden value?
+end
+
+post 'admin/menu_items' do
+@menu_item = MenuItem.new(params)
+@menu_item.save
+
+erb()
 end
 
 ##EATERIES
