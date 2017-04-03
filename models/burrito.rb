@@ -62,4 +62,10 @@ class Burrito
     return burrito_objects
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM burritos WHERE id = #{id}"
+    burrito = SqlRunner.run(sql).first
+    return Burrito.new(burrito)
+  end
+
 end
