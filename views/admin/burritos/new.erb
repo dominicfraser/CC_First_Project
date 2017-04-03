@@ -3,12 +3,15 @@
     <label for='burrito-name'>
       Name:</label>
       <input id='burrito-name' type='text' name='burrito_name'>
+      <br>
     <label for='food-cat'>Category</label>
     <select id='food-cat' name='burrito_cat'>
       <% @food_categories.each do |cat| %>
       <option value='<%= cat.id %>'><%= cat.category %></option>
       <% end %>
     </select>
+    <br>
+    <input type='submit' name='Add Burrito'>
 
   </form>
 </div>

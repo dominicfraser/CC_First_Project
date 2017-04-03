@@ -26,4 +26,11 @@ class FoodCategory
     return cat_obs
   end
 
+  def self.all_without_first()
+    sql = "SELECT * FROM food_categories WHERE id NOT IN (1)"
+    cat_pgs = SqlRunner.run(sql)
+    cat_obs = cat_pgs.map{|cat| FoodCategory.new(cat)}
+    return cat_obs
+  end
+
 end

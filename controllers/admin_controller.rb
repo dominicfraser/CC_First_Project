@@ -12,7 +12,7 @@ end
 
 get '/admin/burritos/new' do
   @eateries = Eatery.all
-  @food_categories = FoodCategory.all
+  @food_categories = FoodCategory.all_without_first
   erb(:'admin/burritos/new', :layout => :admin_layout)
 end
 
