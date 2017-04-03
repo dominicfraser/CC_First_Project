@@ -27,7 +27,7 @@ end
 post '/admin/burritos/:id/delete' do
   @burrito = Burrito.find(params[:id])
   erb(:'admin/burritos/destroy')
-  redirect 'admin/main_menu'
+  redirect 'admin/burritos/index'
 end
 
 ##MENU ITEMS
@@ -55,6 +55,12 @@ end
 get '/admin/eateries/index' do
   @eateries = Eatery.all_without_first
   erb(:'admin/eateries/index', :layout => :admin_layout)
+end
+
+post '/admin/eateries/:id/delete' do
+  @burrito = Eatery.find(params[:id])
+  erb(:'admin/eateries/destroy')
+  redirect 'admin/eateries/index'
 end
 
 ##DEALS
