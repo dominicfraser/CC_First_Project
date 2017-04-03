@@ -86,6 +86,7 @@ post '/admin/deals/:id/delete' do
 end
 
 get '/admin/deals/s_e' do
+  @eateries = Eatery.all_without_first
   erb(:'admin/deals/s_e', :layout => :admin_layout)
 end
 
