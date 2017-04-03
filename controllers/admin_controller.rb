@@ -70,7 +70,6 @@ get '/admin/deals/index' do
 end
 
 post '/admin/deals/:id/delete' do
-  @deal = Deal.find(params[:id])
-  erb(:'admin/deals/destroy')
+  Deal.delete_all_deals_of_same_name(params[:id])
   redirect 'admin/deals/index'
 end
