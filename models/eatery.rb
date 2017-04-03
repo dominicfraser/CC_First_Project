@@ -23,7 +23,7 @@ class Eatery
   end
 
   def update()
-    sql = "UPDATE eateries SET (eatery_name) = ('#{@eatery_name}') "
+    sql = "UPDATE eateries SET (eatery_name) = ('#{@eatery_name}') WHERE id = #{@id} "
     SqlRunner.run(sql)
   end
 
