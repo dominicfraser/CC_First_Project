@@ -1,7 +1,17 @@
 <div>
-  <h1>New Deal</h1>
+  <h1>New Deal Details</h1>
   <form method='post' action='/admin/deals'>
+    <label for='day-id'>Day Valid On:</label>
+    <select id='day-id'>
+      <% @days.each do|day| %>
+      <option value=<%= day.id %>><%= day.day_name %></option>
+      <% end %>
+    </select>
+    <br>
     
+    menu_item_id
+    deal_name
+    burrito_cat
 
 
   </form>

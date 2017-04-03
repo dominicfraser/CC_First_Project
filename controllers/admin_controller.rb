@@ -85,8 +85,13 @@ post '/admin/deals/:id/delete' do
   redirect 'admin/deals/index'
 end
 
-get '/admin/deals/new' do
-  
+get '/admin/deals/s_e' do
+  erb(:'admin/deals/s_e', :layout => :admin_layout)
+end
+
+post '/admin/deals/new' do
+  @days = Day.all 
+  #all days?
 
   erb(:'admin/deals/new', :layout => :admin_layout)
 end
