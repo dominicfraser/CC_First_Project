@@ -9,7 +9,11 @@
     <br>
 
     <label for='burrito-id'>Burrito</label>
-
+    <select id='burrito-id' name='burrito_id'>
+      <%= @burritos.each do |burrito| %>
+      <option value='<%= burrito.id %>'>< burrito.burrito_name  %></option>
+      <% end %>
+    </select>
     <br>
 
     <label for='price'>Price:</label>

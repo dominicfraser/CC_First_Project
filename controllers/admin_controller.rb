@@ -27,6 +27,7 @@ end
 ##MENU ITEMS
 get '/admin/menu_items/new' do
   @eateries = Eatery.all 
+  @burritos = Burrito.all
   erb(:'admin/menu_items/new', :layout => :admin_layout)
 # send hidden value?
 end
