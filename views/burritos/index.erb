@@ -3,11 +3,16 @@
 <h2>All Burritos</h2>
 
 <% @burritos.each do |burrito| %>
-  <p><%= burrito.burrito_name %></p>
+  <h3><%= burrito.burrito_name %></h3>
   <div>
     <p>Available at:</p>
       <% burrito.eateries.each do |eatery| %>
-       <p><%= eatery.eatery_name %></p>
+        <% if eatery.id == 1 %>
+        <p>Available at all eateries</p>
+        <% break %>
+        <% else %>
+         <p><%= eatery.eatery_name %></p>
+        <% end %>
       <% end %>
   </div>
   <hr>
