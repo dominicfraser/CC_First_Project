@@ -58,7 +58,7 @@ get '/admin/eateries/index' do
 end
 
 post '/admin/eateries/:id/delete' do
-  @burrito = Eatery.find(params[:id])
+  @eatery = Eatery.find(params[:id])
   erb(:'admin/eateries/destroy')
   redirect 'admin/eateries/index'
 end
