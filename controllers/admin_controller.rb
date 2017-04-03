@@ -33,12 +33,15 @@ get '/admin/menu_items/new/:bid' do
 end
 
 post 'admin/menu_items' do
-@menu_item = MenuItem.new(params)
-@menu_item.save
 
+if params['eatery_id'] == 1
+  MenuItem.new_all(params['burrito_id'],params['price'])
+else
+  @menu_item = MenuItem.new(params)
+  @menu_item.save
+end
 params['add'] == 'y' ? (redirect "/admin/menu_items/new/#{@burrito.id}") : erb(:'admin/main_menu', :layout => :admin_layout)
 end
-
 
 
 ##EATERIES

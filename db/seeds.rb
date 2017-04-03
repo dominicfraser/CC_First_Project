@@ -146,7 +146,7 @@ expensive_core_burritos = [burrito4,burrito5,burrito6]
 
 
 cheap_core_burritos.each{|burrito| 
-  Eatery.all.each{ |eatery|
+  Eatery.all_without_first.each{ |eatery|
      MenuItem.new({
     'eatery_id' => eatery.id,
     'burrito_id' => burrito.id,
@@ -155,7 +155,7 @@ cheap_core_burritos.each{|burrito|
   }
 }
 expensive_core_burritos.each{|burrito| 
-  Eatery.all.each{ |eatery|
+  Eatery.all_without_first.each{ |eatery|
      MenuItem.new({
     'eatery_id' => eatery.id,
     'burrito_id' => burrito.id,
