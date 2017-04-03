@@ -191,35 +191,26 @@ menu_item4.save
 
 ##all burritos at a certain eatery on a certain day##
 #Eatery1 Monday 20% 
-eatery1.add_deal_to_all_mi(monday,'20% off all Burritos at Eatery1 on Mondays',all_categories)
+eatery1.create_deal_for_category(monday,'20% off all Burritos at Eatery1 on Mondays',all_categories)
 #Eatery2 Wednesday 10% 
-eatery2.add_deal_to_all_mi(wednesday,'10% off all Burritos at Eatery2 on Wednesdays',all_categories)
+eatery2.create_deal_for_category(wednesday,'10% off all Burritos at Eatery2 on Wednesdays',all_categories)
 #Eatery3 Friday 15%
-eatery3.add_deal_to_all_mi(friday,'15% off all Burritos at Eatery3 on Fridays',all_categories)
+eatery3.create_deal_for_category(friday,'15% off all Burritos at Eatery3 on Fridays',all_categories)
 #Eatery1 Thursday £1 
-eatery1.add_deal_to_all_mi(thursday,'£1 off all Burritos at Eatery1 on Thursdays',all_categories)
+eatery1.create_deal_for_category(thursday,'£1 off all Burritos at Eatery1 on Thursdays',all_categories)
 #Eatery2 Sunday 50p
-eatery2.add_deal_to_all_mi(sunday,'50p off all Burritos at Eatery2 on Sundays',all_categories)
+eatery2.create_deal_for_category(sunday,'50p off all Burritos at Eatery2 on Sundays',all_categories)
 #Eatery3 Tuesday £1.50 
-eatery3.add_deal_to_all_mi(tuesday,'£1.50 off all Burritos at Eatery3 on Tuesdays',all_categories)
+eatery3.create_deal_for_category(tuesday,'£1.50 off all Burritos at Eatery3 on Tuesdays',all_categories)
 #Eatery1 Tuesday 2for1
 eatery1.create_deal_for_category(tuesday,'2 for 1 on all Burritos at Eatery1 on Tuesdays',all_categories)
 
 ##selection of burritos at a certain eatery on a certain day##
 #Eatery2 Thursday CP same as C
-eatery2.all_menu_items.each{|mi|
-  if mi.is_in_a_selection?(expensive_core_burritos)
-    mi.create_deal(thursday,'Classic Plus same price as Classic at Eatery2 on Thursdays',classic_plus).save
-  end
-  }
+eatery2.create_deal_for_category(thursday,'Classic Plus same price as Classic at Eatery2 on Thursdays',classic_plus)
+
 #Eatery3 Monday specials are reduced by £1   
-eatery3.all_menu_items.each{|mi|
-  if mi.is_in_a_selection?(cheap_core_burritos) || mi.is_in_a_selection?(expensive_core_burritos)
-    nil
-  else
-    mi.create_deal(monday,'Specials are all reduced by £1 at Eatery3 on Mondays',special).save
-  end
-}
+eatery3.create_deal_for_category(monday,'Specials are all reduced by £1 at Eatery3 on Mondays',special)
 
 binding.pry
 nil
