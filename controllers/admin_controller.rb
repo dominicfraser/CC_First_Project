@@ -102,8 +102,11 @@ end
 post '/admin/deals/:eid' do
   @eatery = Eatery.find(params[:eid])
   @deals = Deal.all_uniq_names
+  @day = Day.find(params[:day_id])
+  @bur_cat = FoodCategory.find(params[:burrito_cat])
+  @deal_name = "#{params[:deal_name]}"
 
-  params[:burrito_cat].to_i == 1 ? @eatery.add_deal_to_all_mi((Day.find(params[:day_id])),"#{params[:deal_name]}",FoodCategory.find(params[:burrito_cat]) ) : eatery.
+  @eatery.create_deal_for_certain_category(@day,@deal_name, @bur_cat) 
 
   redirect 'admin/deals/index'
 end

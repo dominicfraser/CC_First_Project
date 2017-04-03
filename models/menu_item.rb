@@ -21,7 +21,7 @@ class MenuItem
 
   def create_deal(day, deal_name, bur_cat)
     Deal.new({ 
-      'day_id' => day,
+      'day_id' => day.id,
       'deal_name' => deal_name,
       'menu_item_id' => self.id,
       'burrito_cat' => bur_cat.id
