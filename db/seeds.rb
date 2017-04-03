@@ -206,10 +206,10 @@ eatery3.add_deal_to_all_mi(tuesday,'£1.50 off all Burritos at Eatery3 on Tuesda
 eatery1.add_deal_to_all_mi(tuesday,'2 for 1 on all Burritos at Eatery1 on Tuesdays',all_categories)
 
 ##selection of burritos at a certain eatery on a certain day##
-#Eatery2 Thursday EC same as CC
+#Eatery2 Thursday CP same as C
 eatery2.all_menu_items.each{|mi|
   if mi.is_in_a_selection?(expensive_core_burritos)
-    mi.create_deal(thursday.id,'Expensive Core Burritos same price as Cheap Core Burritos at Eatery2 on Thursdays',classic_plus).save
+    mi.create_deal(thursday.id,'Classic Plus same price as Classic at Eatery2 on Thursdays',classic_plus).save
   end
   }
 #Eatery3 Monday specials are reduced by £1   

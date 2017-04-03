@@ -55,4 +55,11 @@ class Burrito
     return burrito_objects
   end
 
+  def self.all_without_first()
+    sql = "SELECT * FROM burritos WHERE id NOT IN (1)"
+    burritos = SqlRunner.run(sql)
+    burrito_objects = burritos.map{|burrito| Burrito.new(burrito)}
+    return burrito_objects
+  end
+
 end

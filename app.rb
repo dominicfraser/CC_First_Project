@@ -7,7 +7,8 @@ require_relative('models/eatery')
 require_relative('models/deal')
 
 get '/' do 
-  erb(:log_on, :layout => :no_nav)
+  erb(:log_on, :layout => :no_nav) 
+  #can also use => false for none
 end
 
 get '' do
