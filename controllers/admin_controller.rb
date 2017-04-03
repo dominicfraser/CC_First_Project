@@ -91,8 +91,9 @@ get '/admin/deals/s_e' do
 end
 
 post '/admin/deals/new' do
+  @eatery = Eatery.find(params['id'])
   @days = Day.all 
-  #all days?
+  @categories = Category.all
 
   erb(:'admin/deals/new', :layout => :admin_layout)
 end

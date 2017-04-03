@@ -1,7 +1,7 @@
 <div>
   <form method='post' action='/admin/deals/new'>
     <label for='eatery-id'>Create Deal(s) for:</label>
-    <select id='eatery-id' name='eatery_id'>
+    <select id='eatery-id' name='id'>
     <% @eateries.each do |eatery| %>
     <option value='<%= eatery.id %>'><%= eatery.eatery_name %></option>
     <% end %>

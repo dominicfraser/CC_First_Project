@@ -9,9 +9,16 @@
     </select>
     <br>
     
-    menu_item_id
-    deal_name
-    burrito_cat
+    <label for='cat-id'>Applies to:</label>
+    <select id='cat-id'>
+      <% @categories.each do |cat| %>
+      <option value='<%= cat.id %>'><%= cat.category %></option>
+      <% end %> 
+    </select>
+    <br>
+
+  <!--   menu_item_id
+    deal_name -->
 
 
   </form>
