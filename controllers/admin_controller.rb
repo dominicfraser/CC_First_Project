@@ -19,8 +19,9 @@ end
 post '/admin/burritos' do
   @burrito = Burrito.new(params)
   @burrito.save
+  @burritos = Burrito.all
 # USE "" when string interpolation
-  params['add'] == 'y' ? (redirect "/admin/menu_items/new/#{@burrito.id}") : erb(:'admin/main_menu', :layout => :admin_layout)
+  params['add'] == 'y' ? (redirect "/admin/menu_items/new/#{@burrito.id}") : erb(:'admin/burritos/index', :layout => :admin_layout)
   #erb(:'admin/burrito/create')
 end
 
@@ -64,8 +65,8 @@ end
 post '/admin/eateries' do
   @eatery = Eatery.new(params)
   @eatery.save
-
-  erb(:'admin/main_menu', :layout => :admin_layout)
+  @eateries = Eatery.all_without_first
+  erb(:'admin/eateries/index', :layout => :admin_layout)
 end
 
 post '/admin/eateries/:id/delete' do
