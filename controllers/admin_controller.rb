@@ -94,7 +94,7 @@ end
 post '/admin/deals/new' do
   @eatery = Eatery.find(params['id'])
   @days = Day.all_without_first
-  @categories = FoodCategory.all_without_first
+  @categories = FoodCategory.all
 
   erb(:'admin/deals/new', :layout => :admin_layout)
 end
@@ -103,7 +103,7 @@ post '/admin/deals/:eid' do
   @eatery = Eatery.find(params[:eid])
   @deals = Deal.all_uniq_names
 
-  params[:burrito_cat] == 1 ? @eatery.add_deal_to_all_mi((Day.find(params[:day_id])),"#{params[:deal_name]}",FoodCategory.find(params[:burrito_cat]) ) : 
+  params[:burrito_cat] != 1 ? @eatery.add_deal_to_all_mi((Day.find(params[:day_id])),"#{params[:deal_name]}",FoodCategory.find(params[:burrito_cat]) ) : nil
 
-  erb(:'admin/deals/index', :layout => :admin_layout)
+  redirect 'admin/deals/index'
 end
