@@ -33,5 +33,5 @@ get '/deal_selection/filtered_deals' do
 end
 
 get '/admin/main_menu' do
-  erb(:'admin/main_menu', :layout => :no_nav)
+  erb(:'admin/main_menu', :layout => :admin_layout)
 end
