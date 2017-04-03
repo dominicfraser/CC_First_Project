@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require_relative('controllers/deals_controller')
 require_relative('controllers/eateries_controller')
+require_relative('controllers/burritos_controller')
 require_relative('models/day')
 require_relative('models/eatery')
 require_relative('models/deal')
@@ -27,10 +28,10 @@ get '/deal_selection/filtered_deals' do
   @deals = @day.find_uniq_deals_by_name_at(@eatery)
   @all_uniq_deals_day = Deal.all_uniq_names_on(@day)
 
-  redirect 'deals/index' unless @eatery.id != 1 || @day.id != 1 
+  redirect '/deals/index' unless @eatery.id != 1 || @day.id != 1 
   erb(:'deal_selection/filtered_deals')
 end
 
 get '/admin/main_menu' do
-  erb(:'admin/main_menu')
+  erb(:'admin/main_menu', :layout => :no_nav)
 end
