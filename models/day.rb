@@ -77,7 +77,7 @@ class Day
   end
 
   def self.all_without_first
-    sql = "SELECT * FROM days WHERE id = #{id}"
+    sql = "SELECT * FROM days WHERE id NOT IN (1)"
     days = SqlRunner.run(sql)
     day_objects = days.map{|day| Day.new(day)}
     return day_objects
