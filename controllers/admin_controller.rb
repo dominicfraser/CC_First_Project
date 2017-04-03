@@ -24,7 +24,7 @@ post '/admin/burritos' do
   #erb(:'admin/burrito/create')
 end
 
-post 'admin/burritos/:id/delete' do
+post '/admin/burritos/:id/delete' do
   @burrito = Burrito.find(params[:id])
   erb(:'admin/burritos/destroy')
   redirect 'admin/main_menu'
