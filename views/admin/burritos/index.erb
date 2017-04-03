@@ -4,6 +4,7 @@
 
 <% @burritos.each do |burrito| %>
   <h3><%= burrito.burrito_name %></h3>
+  <p><%= burrito.burrito_cat %></p>
   <div>
     <p>Available at:</p>
       <% burrito.eateries.each do |eatery| %>
