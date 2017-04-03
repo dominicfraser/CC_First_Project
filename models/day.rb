@@ -76,6 +76,13 @@ class Day
     return day_objects
   end
 
+  def self.all_without_first
+    sql = "SELECT * FROM days WHERE id = #{id}"
+    days = SqlRunner.run(sql)
+    day_objects = days.map{|day| Day.new(day)}
+    return day_objects
+  end
+
   def self.find(id)
     sql = "SELECT * FROM days WHERE id = #{id}"
     day = SqlRunner.run(sql).first
