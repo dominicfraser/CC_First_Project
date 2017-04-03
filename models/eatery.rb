@@ -39,6 +39,17 @@ class Eatery
       mi.create_deal(day.id,deal_name,bur_cat).save}
   end
 
+  def deals
+    sql = "SELECT d.* FROM deals d
+    INNER JOIN menu_items m
+    ON d.menu_item_id=m.id
+    WHERE m.eatery_id = #{@id} "
+
+    deal_pgs = SqlRunner.run(sql)
+    deal_obs = deal_pgs.map{|deal| Deal.new(deal)}
+    return deal_obs
+  end
+
   ### CLASS METHODS
 
   def self.all()
