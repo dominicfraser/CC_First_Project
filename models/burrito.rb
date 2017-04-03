@@ -50,16 +50,12 @@ class Burrito
 
   def self.all()
     sql = "SELECT * FROM burritos"
-    burritos = SqlRunner.run(sql)
-    burrito_objects = burritos.map{|burrito| Burrito.new(burrito)}
-    return burrito_objects
+    Burrito.map_burritos(sql)
   end
 
   def self.all_without_first()
     sql = "SELECT * FROM burritos WHERE id NOT IN (1)"
-    burritos = SqlRunner.run(sql)
-    burrito_objects = burritos.map{|burrito| Burrito.new(burrito)}
-    return burrito_objects
+    Burrito.map_burritos(sql)
   end
 
   def self.find(id)
@@ -67,5 +63,12 @@ class Burrito
     burrito = SqlRunner.run(sql).first
     return Burrito.new(burrito)
   end
+  
+  ## Helper
+def self.map_burritos(sql)
+  burritos = SqlRunner.run(sql)
+  burrito_objects = burritos.map{|burrito| Burrito.new(burrito)}
+  return burrito_objects
+end
 
 end
