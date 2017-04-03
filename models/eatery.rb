@@ -46,8 +46,15 @@ class Eatery
     WHERE m.eatery_id = #{@id} "
 
     deal_pgs = SqlRunner.run(sql)
-    deal_obs = deal_pgs.map{|deal| Deal.new(deal)}
-    return deal_obs
+    deal_obs_non_uniq = deal_pgs.map{|deal| Deal.new(deal)}
+    uniq = []
+    for deal in deal_obs_non_uniq 
+      found_match = uniq.find{|entry| entry.deal_name == deal.deal_name}
+    
+      uniq << deal if !found_match
+    end
+    uniq.sort! {|x,y| x.day_id <=> y.day_id}
+    return uniq
   end
 
   ### CLASS METHODS
