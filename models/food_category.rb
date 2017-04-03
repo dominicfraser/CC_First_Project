@@ -33,4 +33,10 @@ class FoodCategory
     return cat_obs
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM food_categories WHERE id = #{id}"
+    cat_pg = SqlRunner.run(sql).first
+    return FoodCategory.new(cat_pg)
+  end
+
 end
