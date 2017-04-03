@@ -29,3 +29,7 @@ get '/deal_selection/filtered_deals' do
   redirect 'deals/index' unless @eatery.id != 1 || @day.id != 1 
   erb(:'deal_selection/filtered_deals')
 end
+
+get '/admin/main_menu' do
+  erb(:'admin/main_menu')
+end
