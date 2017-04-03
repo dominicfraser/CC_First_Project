@@ -19,15 +19,16 @@ end
 post '/admin/burritos' do
   @burrito = Burrito.new(params)
   @burrito.save
-
-  params['add'] == 'y' ? (redirect '/admin/menu_items/new') : erb(:'admin/main_menu', :layout => :admin_layout)
+# USE "" when string interpolation
+  params['add'] == 'y' ? (redirect "/admin/menu_items/new/#{@burrito.id}") : erb(:'admin/main_menu', :layout => :admin_layout)
   #erb(:'admin/burrito/create')
 end
 
 ##MENU ITEMS
-get '/admin/menu_items/new' do
+get '/admin/menu_items/new/:bid' do
   @eateries = Eatery.all 
   @burritos = Burrito.all
+  @burrito_id = params[:bid]
   erb(:'admin/menu_items/new', :layout => :admin_layout)
 # send hidden value?
 end
