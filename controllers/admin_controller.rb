@@ -68,3 +68,9 @@ get '/admin/deals/index' do
   @deals = Deal.all_uniq_names
   erb(:'admin/deals/index', :layout => :admin_layout)
 end
+
+post '/admin/deals/:id/delete' do
+  @deal = Deal.find(params[:id])
+  erb(:'admin/deals/destroy')
+  redirect 'admin/deals/index'
+end

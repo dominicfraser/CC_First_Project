@@ -3,6 +3,9 @@
   <h2>All Deals</h2>  
   <% @deals.each do |deal| %>
   <p><%= deal.deal_name %></p>
+  <form method='post' action='/admin/deals/<%= deal.id %>/delete'>
+    <input type='submit' value='Delete Deal'>
+  </form>
   <hr>
   <% end %>
 
