@@ -84,3 +84,16 @@ post '/admin/deals/:id/delete' do
   Deal.delete_all_deals_of_same_name(params[:id])
   redirect 'admin/deals/index'
 end
+
+get '/admin/deals/new' do
+  
+
+  erb(:'admin/deals/new', :layout => :admin_layout)
+end
+
+post '/admin/deals' do
+  @deal = Deal.new(params)
+  @deal.save_for?
+
+  erb(:'admin/main_menu', :layout => :admin_layout)
+end
