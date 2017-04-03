@@ -57,6 +57,17 @@ get '/admin/eateries/index' do
   erb(:'admin/eateries/index', :layout => :admin_layout)
 end
 
+get '/admin/eateries/new' do
+  erb(:'admin/eateries/new', :layout => :admin_layout)
+end
+
+post '/admin/eateries' do
+  @eatery = Eatery.new(params)
+  @eatery.save
+
+  erb(:'admin/main_menu', :layout => :admin_layout)
+end
+
 post '/admin/eateries/:id/delete' do
   @eatery = Eatery.find(params[:id])
   erb(:'admin/eateries/destroy')
