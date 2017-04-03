@@ -19,7 +19,9 @@ end
 post '/admin/burrito' do
   @burrito = Burrito.new(params)
   @burrito.save
-  erb(:'admin/burrito/create')
+
+  params['add'] == 'y' ? erb(:'admin/menu_items/new', :layout => :admin_layout) : erb(:'admin/main_menu', :layout => :admin_layout) 
+  #erb(:'admin/burrito/create')
 end
 
 ##EATERIES
