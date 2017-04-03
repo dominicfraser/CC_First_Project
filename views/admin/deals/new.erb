@@ -1,6 +1,6 @@
 <div>
   <h1>New Deal Details</h1>
-  <form method='post' action='/admin/deals'>
+  <form method='post' action='/admin/deals/<%= @eatery.id %>'>
     <label for='day-id'>Day Valid On:</label>
     <select id='day-id'>
       <% @days.each do|day| %>
@@ -17,10 +17,11 @@
     </select>
     <br>
 
-  <!--   menu_item_id
-    deal_name -->
+    <label for='deal-name'>Deal Name:</label>
+    <input required type='text' name='deal_name'>
+    <br>
 
-
+    <input type='submit' value='Create Deals'>
   </form>
 
 </div>

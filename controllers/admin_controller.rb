@@ -98,9 +98,8 @@ post '/admin/deals/new' do
   erb(:'admin/deals/new', :layout => :admin_layout)
 end
 
-post '/admin/deals' do
-  @deal = Deal.new(params)
-  @deal.save_for?
+post '/admin/deals/:eid' do
+  
 
   erb(:'admin/main_menu', :layout => :admin_layout)
 end
