@@ -40,6 +40,7 @@ else
   @menu_item = MenuItem.new(params)
   @menu_item.save
 end
+
 params['add'] == 'y' ? (redirect "/admin/menu_items/new/#{@burrito.id}") : erb(:'admin/main_menu', :layout => :admin_layout)
 end
 
