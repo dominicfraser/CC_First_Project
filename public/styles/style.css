@@ -22,6 +22,8 @@
   font-family: 'Archivo Narrow', sans-serif;
   width: 100%;
   text-align: center;
+  margin: 1.5em auto 0.5em;
+ /* background-image: linear-gradient(#f44336, #9e1e14);*/
  }
 
  #log-on p {
@@ -57,19 +59,24 @@
 
 /* Link as Hyperlink */
 
-#log-on li /*as otherwise button width depends on size of text*/{
-  background-color: #f44336;
+.log-on-b {
+  background-image: linear-gradient(#f44336, #9e1e14);
+  border: none;
+  text-align: center; 
+  text-decoration: none;
   padding: 14px 25px;
   display: inline-block;
   margin: 0.5em 0;
+  font-size: 1em;
+  border-radius: 4px;
+  color: white;
 }
 
-a:link, a:visited {
-    color: white;
-    text-align: center; 
-    text-decoration: none;
+.log-on-b:hover, .log-on-b:active {
+    background-image: none;
+    background-image: linear-gradient(#f44336,#601206);
+    cursor: alias;
 }
-
-a:hover, a:active {
-    background-color: red;
+.log-on-b:active {
+    transform: translateY(4px);
 }
