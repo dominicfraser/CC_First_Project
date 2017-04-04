@@ -80,7 +80,21 @@
     cursor: alias;
 }
 .log-on-b:active {
-    transform: translateY(4px);
+    transform: translateY(3px);
+}
+
+/* FOOTER */
+
+footer ul li a {
+  opacity: .75;
+  display: block;
+  text-indent: -9999em;
+  height: 20px;
+  background: url(/images/footer-social.png) no-repeat left top;
+}
+
+footer ul li a #ft-fb {
+  width: 8px;
 }
 
 
