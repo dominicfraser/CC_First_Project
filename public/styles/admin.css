@@ -39,6 +39,13 @@
 
  /* MAIN MENU */
 
+#main-menu {
+ width: 80%;
+ text-align: center;
+ margin: 2em auto;
+ padding-top: 4em;
+}
+
  /* Style The Dropdown Button */
  .dropbtn {
   background-image: linear-gradient(#f44336, #9e1e14);
@@ -48,7 +55,7 @@
   padding: 14px 25px;
   display: inline-block;
   margin: 0.5em 0;
-  font-size: 1em;
+  font-size: 2em;
   border-radius: 4px;
   color: white;
  }
@@ -57,6 +64,7 @@
  .dropdown {
      position: relative;
      display: inline-block;
+     width:60%;
  }
 
  /* Dropdown Content (Hidden by Default) */
