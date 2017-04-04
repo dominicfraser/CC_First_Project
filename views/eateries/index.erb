@@ -1,8 +1,9 @@
 <div id='eateries-index' >
   <h1>All Eateries</h1>
+  
+  <section id='eatery-single'>
   <% @eateries.each do |eatery| %>
     <% if eatery.eatery_name != 'All Eateries' %>
-    <section id='eatery-single'>
       <p id='eatery-name-iterate' ><%= eatery.eatery_name %> </p>
       <% end %>
       <form action='/deal_selection/filtered_deals' method='get'>
@@ -10,8 +11,9 @@
         <input type="hidden" name="eatery_id" value="<%= eatery.id %>">
         <input class='gen-b' type='submit' value='Show All Deals'>      
       </form>
-    </section>
-  <hr>
+      <hr>
+    
+  
   <% end %>
-
+  </section>
 </div>
