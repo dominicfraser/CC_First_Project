@@ -159,6 +159,7 @@
  footer ul li {
    display: inline-block;
    width: 20px;
+   margin: 0 10px;
  }
 
  /* MEDIA QUERIES */

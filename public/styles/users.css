@@ -1,3 +1,13 @@
+/* DEALS INDEX */
+
+#deals-index {
+  width: 90%;
+  text-align: center;
+  margin: 4em auto;
+  font-family: 'Archivo Narrow', sans-serif;
+}
+
+
 /* FILTERED DEALS */
 
 #filtered-deals {
