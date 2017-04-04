@@ -20,10 +20,12 @@
 
  #log-on h1 {
   font-family: 'Archivo Narrow', sans-serif;
+  color: white;
   width: 100%;
   text-align: center;
-  margin: 1.5em auto 0.5em;
- /* background-image: linear-gradient(#f44336, #9e1e14);*/
+  margin: 0.5em auto 0.5em;
+  padding: 1em 0 0.4em;
+  background-image: linear-gradient(#692520, black);
  }
 
  #log-on p {
@@ -57,7 +59,7 @@
   user-select: none; /* Standard syntax */
 } 
 
-/* Link as Hyperlink */
+/* BUTTONS */
 
 .log-on-b {
   background-image: linear-gradient(#f44336, #9e1e14);
@@ -80,3 +82,5 @@
 .log-on-b:active {
     transform: translateY(4px);
 }
+
+
