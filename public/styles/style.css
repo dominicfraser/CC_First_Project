@@ -93,8 +93,22 @@ footer ul li a {
   background: url(/images/footer-social.png) no-repeat left top;
 }
 
-footer ul li a #ft-fb {
+footer ul li a#ft-fb {
   width: 8px;
 }
 
+footer ul li a#ft-tw {
+  background-position: -29px, 0;
+  width: 20px;
+}
+
+footer ul li a#ft-ig {
+  background-position: -68px, 0;
+  width: 20px;
+}
+
+footer ul li a#ft-li {
+  background-position: -107px, 0;
+  width: 20px;
+}
 
