@@ -128,6 +128,7 @@ footer ul {
   background-image: linear-gradient(black, #692520);
   position:absolute;
   bottom: 1em;
+  text-align: center;
 }
 
 footer ul li a#ft-fb {
