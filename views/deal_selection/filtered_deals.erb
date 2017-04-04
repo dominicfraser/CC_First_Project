@@ -9,8 +9,9 @@
           <form action='/deals/<%= deal.id %>/<%= deal.eatery_applies_to.id %>/<%= deal.day_id %>' method='get'>
             <input class='gen-b' type="submit" value="Burrito Details">
           </form>
+          <hr>
         <% end %>
-        <hr>
+        
 
   <% elsif @day.id == 1 %>
   <!-- All week for certain #eatery -->
@@ -22,8 +23,9 @@
         <form action='/deals/<%= deal.id %>/<%= @eatery.id %>/<%= @day.id %>' method='get'>
           <input class='gen-b' type="submit" value="Burrito Details">
         </form>
-        <% end %>
         <hr>
+        
+        <% end %>
     <% end %>
 
 
