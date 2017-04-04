@@ -9,6 +9,9 @@
   width: 100%;
   font-family: 'Archivo Narrow', Helvetica, sans-serif;
   height: 100%;
+  background :#fff;
+  background-image: url("/images/pattern-white.jpg");
+  background-attachment: fixed;
  }
 
  #container {
