@@ -1,8 +1,9 @@
 <div>
-  <p>
-  <form action='/deal_selection/filtered_deals' method='get'>
+
+  <form id='filter-form' action='/deal_selection/filtered_deals' method='get'>
     <label for='day-select'>
      Select a day: </label>
+     <br>
      <select id='day-select' name='day_id'>
          <% @days.each do |day| %>
          <option value='<%= day.id %>'>
@@ -13,6 +14,7 @@
   </p>
   <p>
    <label for='eatery-select'>Select a location: </label>
+   <br>
      <select id='eatery-select' name='eatery_id'>
       <% @eateries.each do |eatery| %>
       <option value='<%= eatery.id %>'>
@@ -21,10 +23,9 @@
        <% end %>
      </select>
      <p>
-     <input type='submit' value='Show Deals'>
+     <input class='gen-b' type='submit' value='Show Deals'>
      </p>
   </form>
-  </p>
 
 </div>
 

@@ -93,7 +93,7 @@
 
  /* BUTTONS */
 
- .log-on-b {
+ .gen-b {
    background-image: linear-gradient(#f44336, #9e1e14);
    border: none;
    text-align: center; 
@@ -106,12 +106,12 @@
    color: white;
  }
 
- .log-on-b:hover, .log-on-b:active {
+ .gen-b:hover, .log-on-b:active {
      background-image: none;
      background-image: linear-gradient(#f44336,#601206);
      cursor: alias;
  }
- .log-on-b:active {
+ .gen-b:active {
      transform: translateY(3px);
  }
 
