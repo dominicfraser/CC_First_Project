@@ -51,7 +51,7 @@
   text-align: center;
   margin: 0 auto 0.5em;
   padding: 1em 0 0.4em;
-  background-image: linear-gradient(#692520, black);
+  background-image: linear-gradient(#692520, #3A1310);
  }
 
  #log-on p {
@@ -125,7 +125,7 @@ footer ul {
   list-style: none;
   width: 100%;
   padding: 0.3em 0;
-  background-image: linear-gradient(black, #692520);
+  background-image: linear-gradient(#3A1310, #692520);
   position:absolute;
   bottom: 1em;
   text-align: center;
