@@ -8,12 +8,13 @@
 }
 
 #burritos-included h2 {
-  font-size: 2em;
+  font-size: 1.6em;
   margin: 0em 0 0.5em 0;
 }
 
 #burritos-included p {
-    margin: 5px 0;
+    margin: 1em 0;
+    font-size: 1.3em;
 }
 
 /* DEALS INDEX */
