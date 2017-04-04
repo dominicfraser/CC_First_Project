@@ -9,7 +9,15 @@
 
 #deals-index h1 {
   font-size: 2em;
-  margin: 1em 0 0.5em 0;
+  margin: 0em 0 0.5em 0;
+}
+
+#deals-index p {
+    margin: 5px 0;
+}
+
+#deals-index form {
+  margin: 2px 0 6px;
 }
 
 /*button uses base style of filtered deals*/
