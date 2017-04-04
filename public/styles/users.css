@@ -3,9 +3,16 @@
 #deals-index {
   width: 90%;
   text-align: center;
-  margin: 4em auto;
+  margin: 1em auto;
   font-family: 'Archivo Narrow', sans-serif;
 }
+
+#deals-index h1 {
+  font-size: 2em;
+  margin: 1em 0 0.5em 0;
+}
+
+/*button uses base style of filtered deals*/
 
 
 /* FILTERED DEALS */
