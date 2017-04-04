@@ -10,16 +10,41 @@
   <link rel="icon" href="/images/burrito1.jpg" />
 </head>
 <body>
-<nav>
-  <ul>
-    <li><a href="/"><button type='button' class='nav-btn'>Log On/Off</button></a></li>
-    <li><button type='button' class='nav-btn'><a href="/deal_selection/filter">Deal Search</a></button></li>
-    <li><button type='button' class='nav-btn'><a href="/eateries/index">All Eateries</a></button></li>
-    <li><button type='button' class='nav-btn'><a href="/deals/index">All Deals</a></button></li>
-  </ul>
-</nav>
+<div id='container'>
 
-<%= yield  %>
+  <section id='header'>
+    <nav>
+      <ul>
+        <li><a href="/"><button type='button' class='nav-btn'>Log On/Off</button></a></li>
+        <li><button type='button' class='nav-btn'><a href="/deal_selection/filter">Deal Search</a></button></li>
+        <li><button type='button' class='nav-btn'><a href="/eateries/index">All Eateries</a></button></li>
+        <li><button type='button' class='nav-btn'><a href="/deals/index">All Deals</a></button></li>
+      </ul>
+    </nav>
+  </section>
 
+  <section id='body'>
+    <%= yield  %>
+  </section>
+
+    <footer id='footer'>
+      <ul>
+        <li>
+          <a id='ft-fb' href="wwww.facebook.com" target='_blank'>Facebook</a>
+        </li>
+        <li>
+          <a id='ft-tw' href="wwww.twitter.com" target='_blank'>Twitter</a>
+        </li>
+        <li>
+          <a id='ft-ig' href="wwww.instagram.com" target='_blank'>Instagram</a>
+        </li>
+        <li>
+          <a id='ft-li' href="wwww.linkedin.com" target='_blank'>LinkedIn</a>
+        </li>
+      </ul>
+    </footer>
+  
+  
+</div>
 </body>
 </html>
