@@ -21,7 +21,7 @@
 
  #header {
     /*background:#ff0;*/
-    padding:10px;
+    padding:10px 0;
  }
  #body {
     margin-top: 2em;
@@ -38,11 +38,17 @@
 
  /* NAV */
 
+#header nav {
+  padding: 1.9em 0;
+  background: blue;
+  background-image: linear-gradient(#692520, black);
+ }
+
 #header nav ul {
   font-family: 'Archivo Narrow', sans-serif;
   list-style: none;
   padding: 0;
-
+  margin: 0 1em;
 }
 
 #header nav ul li a {
