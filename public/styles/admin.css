@@ -1,0 +1,38 @@
+/* GENERAL */
+
+* { 
+  box-sizing: border-box;
+  margin: 0;
+ }
+
+ body {
+  width: 100%;
+  font-family: 'Archivo Narrow', Helvetica, sans-serif;
+  height: 100%;
+  background :#fff;
+  background-image: url("/images/pattern-white.jpg");
+  background-attachment: fixed;
+ }
+
+ #container {
+    min-height:100%;
+    position:relative;
+ }
+
+ #header {
+    /*background:#ff0;*/
+    padding:10px 0;
+    height: 2em;
+    position: fixed;
+ }
+ #body {
+    padding-top: 2em;
+    padding-bottom:60px;   /* Height of the footer */
+ }
+ #footer {
+    position:fixed;
+    bottom:0;
+    width:100%;
+    height:60px;   /* Height of the footer */
+    /*background:#6cf;*/
+ }
