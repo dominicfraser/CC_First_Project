@@ -34,7 +34,7 @@
  #log-on section p {
   font-family: 'Archivo Narrow', sans-serif;
   width: 80%;
-  margin: 1.5em auto;
+  margin: 1.5em auto 0.4em;
   text-align: center;
  }
 
@@ -42,22 +42,32 @@
   font-family: 'Archivo Narrow', sans-serif;
   list-style: none;
   width: 30%;
-  margin: 1.5em auto;
+  margin: 0.1em auto 1.5em;
   text-align: center;
   padding: 0;
  }
 
 #log-on li a {
   text-decoration: none;
+  -webkit-user-select: none; /* Chrome, Opera, Safari */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
 } 
 
+/* Link as Hyperlink */
+
+#log-on li /*as otherwise button width depends on size of text*/{
+  background-color: #f44336;
+  padding: 14px 25px;
+  display: inline-block;
+  margin: 0.5em 0;
+}
+
 a:link, a:visited {
-    background-color: #f44336;
     color: white;
-    padding: 14px 25px;
     text-align: center; 
     text-decoration: none;
-    display: inline-block;
 }
 
 a:hover, a:active {
