@@ -14,12 +14,14 @@
   font-size: 2em;
 }
 
-#filter-form select {
+#select-blk {
   font-family: 'Open Sans', sans-serif;
+  margin-top: 2em;
+  background-color: #150605;
+  color: white;
 }
 
 .gen-b {
   margin: 0 auto;
 }
 
-font, border, color, padding and background color:

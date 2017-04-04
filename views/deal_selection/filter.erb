@@ -4,7 +4,7 @@
     <label for='day-select'>
      Select a day: </label>
      <br>
-     <select id='day-select' name='day_id'>
+     <select class='select-blk' id='day-select' name='day_id'>
          <% @days.each do |day| %>
          <option value='<%= day.id %>'>
          <%= day.day_name %>       
