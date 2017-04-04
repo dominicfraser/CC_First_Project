@@ -1,4 +1,4 @@
-<div>
+<div id='filtered-deals' >
   <h1>DEALS AVAILABLE</h1>
   <h3>At <%= @eatery.eatery_name %> on <%= @day.day_name %></h3>
 
@@ -7,7 +7,7 @@
       <% @all_uniq_deals_day.each do |deal| %>  
         <p><%= deal.deal_name %></p>
           <form action='/deals/<%= deal.id %>/<%= deal.eatery_applies_to.id %>/<%= deal.day_id %>' method='get'>
-            <input type="submit" value="Burrito Details">
+            <input class='gen-b' type="submit" value="Burrito Details">
           </form>
         <% end %>
         <hr>
@@ -20,7 +20,7 @@
       <% Day.find_all_week_for(@eatery).each do |deal| %>
         <p><%= deal.deal_name %></p>
         <form action='/deals/<%= deal.id %>/<%= @eatery.id %>/<%= @day.id %>' method='get'>
-          <input type="submit" value="Burrito Details">
+          <input class='gen-b' type="submit" value="Burrito Details">
         </form>
         <% end %>
         <hr>
@@ -37,7 +37,7 @@
     <% @deals.each do |deal| %>
     <p><%= deal.deal_name %></p>
     <form action='/deals/<%= deal.id %>/<%= @eatery.id %>/<%= @day.id %>' method='get'>
-      <input type="submit" value="Burrito Details">
+      <input class='gen-b' type="submit" value="Burrito Details">
     </form>
     <% end %>
     <hr>
