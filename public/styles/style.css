@@ -87,10 +87,14 @@
 
 footer ul li a {
   opacity: .75;
-  display: block;
   text-indent: -9999em;
   height: 20px;
   background: url(/images/footer-social.png) no-repeat left top;
+  display: block;
+}
+
+footer ul {
+  list-style: none;
 }
 
 footer ul li a#ft-fb {
@@ -109,6 +113,11 @@ footer ul li a#ft-ig {
 
 footer ul li a#ft-li {
   background-position: -107px, 0;
+  width: 20px;
+}
+
+footer ul li {
+  display: inline-block;
   width: 20px;
 }
 
