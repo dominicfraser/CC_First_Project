@@ -1,5 +1,21 @@
 /* BURRITOS INCLUDED IN DEAL*/
 
+#burritos-included {
+  width: 90%;
+  text-align: center;
+  margin: 1em auto;
+  font-family: 'Archivo Narrow', sans-serif;
+}
+
+#burritos-included h2 {
+  font-size: 2em;
+  margin: 0em 0 0.5em 0;
+}
+
+#burritos-included p {
+    margin: 5px 0;
+}
+
 /* DEALS INDEX */
 
 #deals-index {
