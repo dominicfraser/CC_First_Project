@@ -156,3 +156,12 @@
    display: inline-block;
    width: 20px;
  }
+
+ /* MEDIA QUERIES */
+
+
+ @media screen and (max-width: 380px) {
+   .nav-btn {
+    font-size: 0.65em;
+   }
+}
