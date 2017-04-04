@@ -39,7 +39,7 @@
  /* NAV */
 
 #header nav {
-  padding: 1.9em 0;
+  padding: 0.5em 0 2em;
   background: blue;
   background-image: linear-gradient(#692520, black);
  }
@@ -60,6 +60,7 @@
 }
 
 .nav-btn {
+  background-image: linear-gradient(#b43207,#a74747);
   border: none;
   text-align: center; 
   text-decoration: none;
@@ -71,6 +72,15 @@
 
 .nav-btn a {
   color: white;
+}
+
+.nav-btn:hover, .nav-btn:active {
+    background-image: none;
+    background-image: linear-gradient(black,#b43207);
+    cursor: alias;
+}
+.log-on-b:active {
+    transform: translateY(3px);
 }
 
 #clear-nav-float {
