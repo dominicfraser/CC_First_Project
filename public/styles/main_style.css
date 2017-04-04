@@ -1,0 +1,103 @@
+/* GENERAL */
+
+* { 
+  box-sizing: border-box;
+  margin: 0;
+ }
+
+ body {
+  width: 100%;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  height: 100%;
+ }
+
+ #container {
+    min-height:100%;
+    position:relative;
+ }
+
+ #header {
+    /*background:#ff0;*/
+    padding:10px;
+ }
+ #body {
+    padding: 0;
+    padding-bottom:60px;   /* Height of the footer */
+ }
+ #footer {
+    position:fixed;
+    bottom:0;
+    width:100%;
+    height:60px;   /* Height of the footer */
+    /*background:#6cf;*/
+ }
+
+ /* BUTTONS */
+
+ .log-on-b {
+   background-image: linear-gradient(#f44336, #9e1e14);
+   border: none;
+   text-align: center; 
+   text-decoration: none;
+   padding: 14px 25px;
+   display: inline-block;
+   margin: 0.5em 0;
+   font-size: 1em;
+   border-radius: 4px;
+   color: white;
+ }
+
+ .log-on-b:hover, .log-on-b:active {
+     background-image: none;
+     background-image: linear-gradient(#f44336,#601206);
+     cursor: alias;
+ }
+ .log-on-b:active {
+     transform: translateY(3px);
+ }
+
+ /* FOOTER */
+
+ footer ul li a {
+   opacity: .75;
+   text-indent: -9999em;
+   height: 20px;
+   background: url(/images/footer-social.png) no-repeat left top;
+   display: block;
+   position:absolute;
+   bottom: 0.28em;
+ }
+
+ footer ul {
+   list-style: none;
+   width: 100%;
+   padding: 0.3em 0;
+   background-image: linear-gradient(black, #692520);
+   position:absolute;
+   bottom: 1em;
+   text-align: center;
+ }
+
+ footer ul li a#ft-fb {
+   width: 8px;
+ }
+
+ footer ul li a#ft-tw {
+   background-position: -29px, 0;
+   width: 20px;
+ }
+
+ footer ul li a#ft-ig {
+   background-position: -68px, 0;
+   width: 20px;
+ }
+
+ footer ul li a#ft-li {
+   background-position: -107px, 0;
+   width: 20px;
+ }
+
+ footer ul li {
+   display: inline-block;
+   width: 20px;
+ }
