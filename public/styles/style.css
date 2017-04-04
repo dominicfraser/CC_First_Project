@@ -20,18 +20,37 @@
 
  #log-on h1 {
   font-family: 'Archivo Narrow', sans-serif;
+  width: 100%;
+  text-align: center;
  }
 
  #log-on p {
  font-family: 'Open Sans', sans-serif;
- }
-
- #log-on section ul {
-  font-family: 'Archivo Narrow', sans-serif;
+ width: 80%;
+ text-align: justify;
+ margin: 1.5em auto;
  }
 
  #log-on section p {
   font-family: 'Archivo Narrow', sans-serif;
+  width: 80%;
+  margin: 1.5em auto;
+  text-align: center;
  }
 
- 
+ #log-on section ul {
+  font-family: 'Archivo Narrow', sans-serif;
+  list-style: none;
+  width: 30%;
+  margin: 1.5em auto;
+  text-align: center;
+  padding: 0;
+ }
+
+/*#log-on li {
+  display: inline-block;
+}
+*/
+#log-on li a {
+  text-decoration: none;
+} 
