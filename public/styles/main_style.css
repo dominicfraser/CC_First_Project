@@ -63,14 +63,14 @@
   border: none;
   text-align: center; 
   text-decoration: none;
-  color: white;
   font-size: 0.9em;
   
-
-
-
   float: left;
-  border: 1px solid green;
+  border: 1px solid black;
+}
+
+.nav-btn a {
+  color: white;
 }
 
 #clear-nav-float {
