@@ -21,6 +21,7 @@
     padding:10px;
  }
  #body {
+    margin-top: 2em;
     padding: 0;
     padding-bottom:60px;   /* Height of the footer */
  }
@@ -34,15 +35,38 @@
 
  /* NAV */
 
+#header nav ul {
+  font-family: 'Archivo Narrow', sans-serif;
+  list-style: none;
+  padding: 0;
+
+}
+
+#header nav ul li a {
+  text-decoration: none;
+  -webkit-user-select: none; /* Chrome, Opera, Safari */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+}
+
 .nav-btn {
   border: none;
   text-align: center; 
   text-decoration: none;
+  color: white;
+  font-size: 0.9em;
+  
+
+
 
   float: left;
   border: 1px solid green;
 }
 
+#clear-nav-float {
+  float: clear;
+}
 
  /* BUTTONS */
 
