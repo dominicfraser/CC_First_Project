@@ -1,3 +1,25 @@
+/* EATERIES INDEX */
+
+#eateries-index {
+  width: 90%;
+  text-align: center;
+  margin: 4em auto;
+  font-family: 'Archivo Narrow', sans-serif;
+}
+
+#eateries-index form input.gen-b {
+  font-size: 0.8em;
+  padding: 2px 10px;
+}
+
+#eatery-name-iterate {
+  font-size: 1.5em;
+}
+
+#eateries-index form {
+  margin: 5px 0 15px;
+}
+
 /* FILTER */
 
 #filter-form {
@@ -14,7 +36,7 @@
   font-size: 2em;
 }
 
-#select-blk {
+.select-blk {
   font-family: 'Open Sans', sans-serif;
   margin-top: 2em;
   background-color: #150605;

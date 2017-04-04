@@ -15,7 +15,7 @@
   <p>
    <label for='eatery-select'>Select a location: </label>
    <br>
-     <select id='eatery-select' name='eatery_id'>
+     <select class='select-blk' id='eatery-select' name='eatery_id'>
       <% @eateries.each do |eatery| %>
       <option value='<%= eatery.id %>'>
         <%= eatery.eatery_name %>
