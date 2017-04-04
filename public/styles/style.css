@@ -95,6 +95,9 @@ footer ul li a {
 
 footer ul {
   list-style: none;
+  width: 100%;
+  padding: 0.2em 0;
+  background-image: linear-gradient(black, #692520);
 }
 
 footer ul li a#ft-fb {
