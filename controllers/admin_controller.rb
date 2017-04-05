@@ -116,6 +116,7 @@ post '/admin/deals/:eid' do
   @deals = Deal.all_uniq_names
   @day = Day.find(params[:day_id])
   @bur_cat = FoodCategory.find(params[:burrito_cat])
+  @operator = params['operator']
   @deal_name = "#{params[:deal_name]}"
 
   @eatery.create_deal_for_category(@day,@deal_name, @bur_cat) 

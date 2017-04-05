@@ -17,6 +17,18 @@
     </select>
     <br>
 
+    <label for='operator'>Type:</label>
+    <select id='operator' name='operator'>
+      <option value='*'>Percentage Discount</option>
+      <option value='-'>Subtract Set Amount</option>
+      <option value='special'>Special Deal</option>
+    </select>
+    <br>
+
+    <label for='operand'>By Amount:</label>
+    <input id='price' type='number' name='operand' min='0' placeholder='f.e. 0.5 for 50%'>
+    <br>
+
     <label for='deal-name'>Deal Name:</label>
     <input required type='text' name='deal_name'>
     <br>

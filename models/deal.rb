@@ -12,7 +12,7 @@ class Deal
     @deal_name = deal_hash['deal_name']
     @burrito_cat = deal_hash['burrito_cat'].to_i
     @operator = deal_hash['operator']
-    @operand = deal_hash['operand']
+    @operand = deal_hash['operand'].to_f
   end
 
   ### INSTANCE METHODS
