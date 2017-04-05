@@ -40,16 +40,7 @@ CREATE TABLE deals (
   menu_item_id INT4 REFERENCES menu_items(id) ON DELETE CASCADE,
   deal_name VARCHAR(255) NOT NULL,
   burrito_cat INT4 REFERENCES food_categories(id) ON DELETE CASCADE
-  -- operator
-  -- amount
+  operator VARCHAR(255), 
+  operand INT
 );
 
-
-
--- deals at each eatery:
--- SELECT e.*, d.deal_name FROM eateries e
--- INNER JOIN menu_items m 
--- ON e.id=m.eatery_id
--- INNER JOIN deals d
--- ON d.menu_item_id=m.id
--- WHERE e.id = ;
