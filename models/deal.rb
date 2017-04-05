@@ -3,7 +3,7 @@ require('pry-byebug')
 
 class Deal
 
-  attr_reader :id, :day_id, :menu_item_id, :deal_name, :burrito_cat
+  attr_reader :id, :day_id, :menu_item_id, :deal_name, :burrito_cat, :operator, :operand
 
   def initialize(deal_hash)
     @id = deal_hash['id'].to_i

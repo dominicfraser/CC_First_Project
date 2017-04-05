@@ -45,6 +45,15 @@ class Burrito
     price = SqlRunner.run(sql).first['price'].to_f.round(2)
   end  
 
+  def price_after(deal, eatery)
+    'Special Deal!' if deal.operator == 'special'
+
+    old_p = self.price(eatery)
+    old_p_and_operator = old_p.method(deal.operator)
+    new_p = old_p_and_operator.call(deal.operand.to_i)
+    return new_p
+  end
+
   def category()
     sql = " SELECT * FROM food_categories WHERE id = #{@burrito_cat}"
     category_pg = SqlRunner.run(sql).first

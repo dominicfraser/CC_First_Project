@@ -5,7 +5,7 @@
     <% @burritos.each do |burrito| %>
     <p><%= burrito.burrito_name %></p>
     <br>
-    <p><strike><%= burrito.price(@eatery) %></strike>  <%= burrito.price_after(@deal)  %>
+    <p><strike><%= burrito.price(@eatery) %></strike>  <%= burrito.price_after(@eatery, @deal)  %>
     </p>
     <% end %>
   </section>
