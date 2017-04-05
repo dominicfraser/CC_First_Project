@@ -1,0 +1,53 @@
+ /* NAV */
+
+#header nav {
+  padding: 0.5em 0 0.5em;
+  background: blue;
+  background-image: linear-gradient(#692520, #3A1310);
+  position: fixed;
+  top: 0;
+  width: 100%;
+ }
+
+#header nav ul {
+  font-family: 'Archivo Narrow', sans-serif;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+#header nav ul li {
+  display: inline;
+}
+
+#header nav ul li a {
+  display: inline-block;
+  text-decoration: none;
+  -webkit-user-select: none; /* Chrome, Opera, Safari */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+}
+
+.nav-btn {
+  background-image: linear-gradient(#ED4D40,#A13830);
+  border: none;
+  text-align: center; 
+  text-decoration: none;
+  font-size: 0.9em;
+  
+  border: 1px solid black;
+}
+
+.nav-btn a {
+  color: white;
+}
+
+.nav-btn:hover, .nav-btn:active {
+    background-image: none;
+    background-image: linear-gradient(#A13830,#ED4D40);
+    cursor: alias;
+}
+.nav-btn:active {
+    transform: translateY(3px);
+}
