@@ -117,9 +117,10 @@ post '/admin/deals/:eid' do
   @day = Day.find(params[:day_id])
   @bur_cat = FoodCategory.find(params[:burrito_cat])
   @operator = params['operator']
+  @operand = params['operand'].to_f
   @deal_name = "#{params[:deal_name]}"
 
-  @eatery.create_deal_for_category(@day,@deal_name, @bur_cat) 
+  @eatery.create_deal_for_category(@day,@deal_name, @bur_cat, @operator, @operand) 
 
   redirect 'admin/deals/index'
 end
