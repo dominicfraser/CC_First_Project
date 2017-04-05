@@ -39,7 +39,7 @@ CREATE TABLE deals (
   day_id INT4 REFERENCES days(id) ON DELETE CASCADE,
   menu_item_id INT4 REFERENCES menu_items(id) ON DELETE CASCADE,
   deal_name VARCHAR(255) NOT NULL,
-  burrito_cat INT4 REFERENCES food_categories(id) ON DELETE CASCADE
+  burrito_cat INT4 REFERENCES food_categories(id) ON DELETE CASCADE,
   operator VARCHAR(255), 
   operand INT
 );

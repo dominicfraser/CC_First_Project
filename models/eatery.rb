@@ -36,7 +36,7 @@ class Eatery
 
   def create_deal_for_category(day, deal_name,bur_cat, operator, operand)
     self.all_menu_items.each{ |mi|
-      mi.create_deal(day, deal_name,bur_cat).save }
+      mi.create_deal(day, deal_name,bur_cat,operator,operand).save }
   end
 
   #duplicate of above, refacor out when found

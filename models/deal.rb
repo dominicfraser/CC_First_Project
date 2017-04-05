@@ -11,12 +11,14 @@ class Deal
     @menu_item_id = deal_hash['menu_item_id'].to_i
     @deal_name = deal_hash['deal_name']
     @burrito_cat = deal_hash['burrito_cat'].to_i
+    @operator = deal_hash['operator']
+    @operand = deal_hash['operand']
   end
 
   ### INSTANCE METHODS
 
   def save()
-    sql = "INSERT INTO deals (day_id,menu_item_id,deal_name,burrito_cat) VALUES (#{@day_id},#{@menu_item_id},'#{@deal_name}',#{@burrito_cat}) RETURNING id "
+    sql = "INSERT INTO deals (day_id,menu_item_id,deal_name,burrito_cat,operator,operand) VALUES (#{@day_id},#{@menu_item_id},'#{@deal_name}',#{@burrito_cat},'#{@operator}',#{@operand}) RETURNING id "
     deals_array = SqlRunner.run(sql)
     @id = deals_array.first['id'].to_i
   end

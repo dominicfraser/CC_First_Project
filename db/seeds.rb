@@ -191,26 +191,26 @@ menu_item4.save
 
 ##all burritos at a certain eatery on a certain day##
 #Eatery1 Monday 20% 
-eatery1.create_deal_for_category(monday,'20% off all Burritos at Eatery1 on Mondays',all_categories,'*','0.8')
+eatery1.create_deal_for_category(monday,'20% off all Burritos at Eatery1 on Mondays',all_categories,'*',0.8)
 #Eatery2 Wednesday 10% 
-eatery2.create_deal_for_category(wednesday,'10% off all Burritos at Eatery2 on Wednesdays',all_categories,'*','0.9')
+eatery2.create_deal_for_category(wednesday,'10% off all Burritos at Eatery2 on Wednesdays',all_categories,'*',0.9)
 #Eatery3 Friday 15%
-eatery3.create_deal_for_category(friday,'15% off all Burritos at Eatery3 on Fridays',all_categories,'*','0.85')
+eatery3.create_deal_for_category(friday,'15% off all Burritos at Eatery3 on Fridays',all_categories,'*',0.85)
 #Eatery1 Thursday £1 
-eatery1.create_deal_for_category(thursday,'£1 off all Burritos at Eatery1 on Thursdays',all_categories,'1','-')
+eatery1.create_deal_for_category(thursday,'£1 off all Burritos at Eatery1 on Thursdays',all_categories,'-',1)
 #Eatery2 Sunday 50p
-eatery2.create_deal_for_category(sunday,'50p off all Burritos at Eatery2 on Sundays',all_categories,'0.5','-')
+eatery2.create_deal_for_category(sunday,'50p off all Burritos at Eatery2 on Sundays',all_categories,'-',0.5)
 #Eatery3 Tuesday £1.50 
-eatery3.create_deal_for_category(tuesday,'£1.50 off all Burritos at Eatery3 on Tuesdays',all_categories,'1.5','-')
+eatery3.create_deal_for_category(tuesday,'£1.50 off all Burritos at Eatery3 on Tuesdays',all_categories,'-',1.5)
 #Eatery1 Tuesday 2for1
-eatery1.create_deal_for_category(tuesday,'2 for 1 on all Burritos at Eatery1 on Tuesdays',all_categories,'0','special')
+eatery1.create_deal_for_category(tuesday,'2 for 1 on all Burritos at Eatery1 on Tuesdays',all_categories,'special',0)
 
 ##selection of burritos at a certain eatery on a certain day##
 #Eatery2 Thursday CP same as C
-eatery2.create_deal_for_category(thursday,'Classic Plus same price as Classic at Eatery2 on Thursdays',classic_plus'0','special')
+eatery2.create_deal_for_category(thursday,'Classic Plus same price as Classic at Eatery2 on Thursdays',classic_plus,'special',0)
 
 #Eatery3 Monday specials are reduced by £1   
-eatery3.create_deal_for_category(monday,'Specials are all reduced by £1 at Eatery3 on Mondays',special,'1','-')
+eatery3.create_deal_for_category(monday,'Specials are all reduced by £1 at Eatery3 on Mondays',special,'-',1)
 
 binding.pry
 nil
