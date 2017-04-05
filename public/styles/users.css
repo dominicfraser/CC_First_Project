@@ -17,6 +17,11 @@
     font-size: 1.3em;
 }
 
+#burritos-included p span {
+  font-family: 'Open Sans';
+  font-size: 0.85em;
+}
+
 /* DEALS INDEX */
 
 #deals-index {
