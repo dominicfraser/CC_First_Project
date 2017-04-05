@@ -1,13 +1,15 @@
 <div id='burritos-included'>
   <h2>Burritos included in <%= @deal.deal_name %></h2>
   
-  <section>
+  
     <% @burritos.each do |burrito| %>
+    <section>
     <p><%= burrito.burrito_name %></p>
-    <br>
     <p><strike>£<%= burrito.price(@eatery) %></strike>  <%= burrito.price_after(@deal, @eatery)  %>
     </p>
+    <hr>
+    </section>
     <% end %>
-  </section>
+  
 
 </div>
