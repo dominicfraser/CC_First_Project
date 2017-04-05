@@ -131,7 +131,7 @@
 
 /* EATERIES INDEX */
 
-  #eateries-index {
+  #eateries-index section {
     width: 90%;
     text-align: justify;
     margin: 1em auto;
@@ -141,6 +141,23 @@
   #eateries-index h2 {
     font-size: 1.6em;
     margin: 0em 0 0.5em 0;
+    text-align: center;
+}
+
+  #eateries-index h3 {
+    font-size: 1.4em;
+}
+
+
+  #eateries-index form {
+    text-align: center;
+    margin: -10px 0 0;
+}
+
+  #eateries-index p {
+    font-family: 'Open Sans';
+    font-size: 0.9em;
+    margin: 2px 0;
 }
 
  /* NEW BURRITOS */

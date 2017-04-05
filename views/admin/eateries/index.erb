@@ -1,9 +1,9 @@
-<div>
+<div id='eateries-index'>
   
 <h2>All Eateries</h2>  
 <% @eateries.each do |eatery| %>
 
-<section id='eateries-index'>
+<section>
 
   <h3><%= eatery.eatery_name %></h3>
   <p>Deals:</p>
@@ -12,11 +12,11 @@
     <% end %>
 </section>
   <form method='post' action='/admin/eateries/<%= eatery.id %>/delete'>
-    <input type='submit' value='Delete Eatery'>
+    <input class='gen-b' type='submit' value='Delete Eatery'>
   </form>
 
   <form method='get' action='/admin/eateries/<%= eatery.id %>/edit'>
-  <input type='submit' value='Edit Eatery'>  
+  <input class='gen-b' type='submit' value='Edit Eatery'>  
   </form>
   
   <hr>
