@@ -24,6 +24,7 @@
   text-align: center;
   margin: 1em auto;
   font-family: 'Archivo Narrow', sans-serif;
+  max-width: 700px;
 }
 
 #deals-index h1 {
