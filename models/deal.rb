@@ -73,7 +73,7 @@ class Deal
       ON m.eatery_id=e.id
       INNER JOIN burritos b
       ON b.id=m.burrito_id 
-      WHERE e.id = #{eatery.id} AND d.burrito_cat = #{self.burrito_cat}"
+      WHERE e.id = #{eatery.id} AND d.burrito_cat = #{self.burrito_cat} AND b.burrito_cat = #{self.burrito_cat}"
       burrito_pgs = SqlRunner.run(sql)
       burrito_obs = burrito_pgs.map{|burrito| Burrito.new(burrito)}
       return burrito_obs
