@@ -45,6 +45,12 @@ class Burrito
     price = SqlRunner.run(sql).first['price'].to_f.round(2)
   end  
 
+  def category()
+    sql = " SELECT * FROM food_categories WHERE id = #{@burrito_cat}"
+    category_pg = SqlRunner.run(sql).first
+    return FoodCategory.new(category_pg)
+  end
+
 
   ### CLASS METHODS
 
