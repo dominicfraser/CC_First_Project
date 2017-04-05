@@ -93,56 +93,56 @@ sofritas = Burrito.new({
   'burrito_name' => 'Sofritas',
   'burrito_cat' => classic.id
   })
-burrito2 = Burrito.new({
-  'burrito_name' => 'burrito2',
+barbacoa = Burrito.new({
+  'burrito_name' => 'Barbacoa',
   'burrito_cat' => classic.id
   })
-burrito3 = Burrito.new({
-  'burrito_name' => 'burrito3',
+chicken = Burrito.new({
+  'burrito_name' => 'Chicken',
   'burrito_cat' => classic.id
   })
-burrito4 = Burrito.new({
-  'burrito_name' => 'burrito4',
+carnitas = Burrito.new({
+  'burrito_name' => 'Carnitas',
   'burrito_cat' => classic_plus.id
   })
-burrito5 = Burrito.new({
-  'burrito_name' => 'burrito5',
+chorizo = Burrito.new({
+  'burrito_name' => 'Chorizo',
   'burrito_cat' => classic_plus.id
   })
-burrito6 = Burrito.new({
-  'burrito_name' => 'burrito6',
+breakfast = Burrito.new({
+  'burrito_name' => 'Breakfast',
   'burrito_cat' => classic_plus.id
   })
-burrito7 = Burrito.new({
-  'burrito_name' => 'burrito7',
+spicy_guiso = Burrito.new({
+  'burrito_name' => 'Spicy Guiso',
   'burrito_cat' => deluxe.id
   })
-burrito8 = Burrito.new({
-  'burrito_name' => 'burrito8',
+juarez = Burrito.new({
+  'burrito_name' => 'Juarez',
   'burrito_cat' => deluxe.id
   })
-burrito9 = Burrito.new({
-  'burrito_name' => 'burrito9',
+fish = Burrito.new({
+  'burrito_name' => 'Fish',
   'burrito_cat' => deluxe.id
   })
-sofritas0 = Burrito.new({
-  'burrito_name' => 'sofritas0',
+steak_and_chorizo = Burrito.new({
+  'burrito_name' => 'Steak and Chorizo',
   'burrito_cat' => special.id
   })
 
 sofritas.save
-burrito2.save
-burrito3.save
-burrito4.save
-burrito5.save
-burrito6.save
-burrito7.save
-burrito8.save
-burrito9.save
-sofritas0.save
+barbacoa.save
+chicken.save
+carnitas.save
+chorizo.save
+breakfast.save
+spicy_guiso.save
+juarez.save
+fish.save
+steak_and_chorizo.save
 
-cheap_core_burritos = [sofritas,burrito2,burrito3]
-expensive_core_burritos = [burrito4,burrito5,burrito6]
+cheap_core_burritos = [sofritas,barbacoa,chicken]
+expensive_core_burritos = [carnitas,chorizo,breakfast]
 
 
 cheap_core_burritos.each{|burrito| 
@@ -166,22 +166,22 @@ expensive_core_burritos.each{|burrito|
 
 menu_item1 = MenuItem.new({
   'eatery_id' => el_cartel.id,
-  'burrito_id' => burrito7.id,
+  'burrito_id' => spicy_guiso.id,
   'price' => 9
   })
 menu_item2 = MenuItem.new({
   'eatery_id' => el_cartel.id,
-  'burrito_id' => burrito8.id,
+  'burrito_id' => juarez.id,
   'price' => 9
   })
 menu_item3 = MenuItem.new({
   'eatery_id' => antojito.id,
-  'burrito_id' => burrito9.id,
+  'burrito_id' => fish.id,
   'price' => 9
   })
 menu_item4 = MenuItem.new({
   'eatery_id' => mariachi.id,
-  'burrito_id' => sofritas0.id,
+  'burrito_id' => steak_and_chorizo.id,
   'price' => 10
   })
 menu_item1.save
