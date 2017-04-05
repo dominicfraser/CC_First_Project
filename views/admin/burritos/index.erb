@@ -5,10 +5,11 @@
 <% @burritos.each do |burrito| %>
   <h3><%= burrito.burrito_name %></h3>
 
-  
-  <p><label for='burrito-category'>Category: <%= burrito.category.category %></label></p>
-
   <div>
+  <section class='burrito-info'>
+  <p><label for='burrito-category'>Category: <%= burrito.category.category %></label></p>
+  </section>
+  <section class='burrito-info'>
     <p>Available at:</p>
       <% burrito.eateries.each do |eatery| %>
         <% if eatery.id == 1 %>
@@ -18,6 +19,7 @@
          <p><%= eatery.eatery_name %></p>
         <% end %>
       <% end %>
+  </section>
   </div>
   <form method='post' action='/admin/burritos/<%= burrito.id %>/delete'>
     <input class='gen-b' type='submit' value='Delete Burrito'>

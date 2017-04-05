@@ -149,4 +149,16 @@
  #admin-burritos-index p {
      margin: 0.1em 0;
      font-size: 1.1em;
+  /*width: 40%;*/   
+ }
+
+ #admin-burritos-index p label {
+  margin-right: 1em;
+ }
+
+ section.burrito-info {
+  display: inline-block; 
+  text-align: center; 
+  margin: 0 auto; 
+  vertical-align: top
  }
