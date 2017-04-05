@@ -12,6 +12,7 @@
   background :#fff;
   background-image: url("/images/pattern-white.jpg");
   background-attachment: fixed;
+  margin-top: 1em;
  }
 
  #container {
