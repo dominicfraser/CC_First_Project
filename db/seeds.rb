@@ -9,7 +9,7 @@ require('pry-byebug')
 
 ### MUST BE FIRST SEEDED
 all_week = Day.new({
-  'day_name' => 'All Week'
+  'day_name' => 'All Days'
   })
 all_week.save
 
