@@ -62,7 +62,7 @@ class MenuItem
     return mi_objects
   end
 
-  def self.new_all(burrito_id, price, operator, operand)
+  def self.new_all(burrito_id, price)
     @eateries = Eatery.all_without_first
 
     @eateries.each{|eatery|
@@ -70,8 +70,6 @@ class MenuItem
         'eatery_id' => eatery.id,
         'burrito_id' => burrito_id,
         'price' => price.to_i,
-        'operator' => operator,
-        'operand' => operand
         }).save
       }
   end
