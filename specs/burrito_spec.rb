@@ -7,7 +7,7 @@
 class TestBurrito < MiniTest::Test
 
   def setup
-    @burrito1 = Burrito.new({
+    @sofritas = Burrito.new({
       'burrito_name' => 'burrito6',
       'id' => 1
       })
@@ -15,22 +15,22 @@ class TestBurrito < MiniTest::Test
       'burrito_name' => 'burrito6',
       'id' => 2
       })
-    @eatery1 = Eatery.new({
-      'eatery_name' => 'eatery1',
+    @el_cartel = Eatery.new({
+      'eatery_name' => 'el_cartel',
       'id' => 1
       })
-    @eatery2 = Eatery.new({
-      'eatery_name' => 'eatery1',
+    @antojito = Eatery.new({
+      'eatery_name' => 'Antojito',
       'id' => 2
       })
     @menu_item1 = MenuItem.new({
-      'eatery_id' => @eatery1.id,
-      'burrito_id' => @burrito1.id,
+      'eatery_id' => @el_cartel.id,
+      'burrito_id' => @sofritas.id,
       'price' => 9,
       'id' => 1
       })
     @menu_item2 = MenuItem.new({
-      'eatery_id' => @eatery1.id,
+      'eatery_id' => @el_cartel.id,
       'burrito_id' => @burrito2.id,
       'price' => 9,
       'id' => 2

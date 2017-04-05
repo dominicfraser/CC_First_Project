@@ -6,7 +6,7 @@
 class TestMenuItem < MiniTest::Test
 
 def setup
-  @burrito1 = Burrito.new({
+  @sofritas = Burrito.new({
     'burrito_name' => 'burrito6',
     'id' => 1
     })
@@ -31,7 +31,7 @@ def setup
     })
   @menu_item2 = MenuItem.new({
     'eatery_id' => 1,
-    'burrito_id' => @burrito1.id,
+    'burrito_id' => @sofritas.id,
     'price' => 9,
     'id' => 1
     })

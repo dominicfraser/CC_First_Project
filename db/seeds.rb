@@ -75,22 +75,22 @@ saturday.save
 sunday.save
 new_years_eve_2017.save
 
-eatery1 = Eatery.new({
-  'eatery_name' => 'eatery1'
+el_cartel = Eatery.new({
+  'eatery_name' => 'El Cartel'
   })
-eatery2 = Eatery.new({
-  'eatery_name' => 'eatery2'
+antojito = Eatery.new({
+  'eatery_name' => 'Antojito'
   })
-eatery3 = Eatery.new({
-  'eatery_name' => 'eatery3'
+mariachi = Eatery.new({
+  'eatery_name' => 'Mariachi'
   })
 
-eatery1.save
-eatery2.save
-eatery3.save
+el_cartel.save
+antojito.save
+mariachi.save
 
-burrito1 = Burrito.new({
-  'burrito_name' => 'burrito1',
+sofritas = Burrito.new({
+  'burrito_name' => 'Sofritas',
   'burrito_cat' => classic.id
   })
 burrito2 = Burrito.new({
@@ -125,12 +125,12 @@ burrito9 = Burrito.new({
   'burrito_name' => 'burrito9',
   'burrito_cat' => deluxe.id
   })
-burrito10 = Burrito.new({
-  'burrito_name' => 'burrito10',
+sofritas0 = Burrito.new({
+  'burrito_name' => 'sofritas0',
   'burrito_cat' => special.id
   })
 
-burrito1.save
+sofritas.save
 burrito2.save
 burrito3.save
 burrito4.save
@@ -139,9 +139,9 @@ burrito6.save
 burrito7.save
 burrito8.save
 burrito9.save
-burrito10.save
+sofritas0.save
 
-cheap_core_burritos = [burrito1,burrito2,burrito3]
+cheap_core_burritos = [sofritas,burrito2,burrito3]
 expensive_core_burritos = [burrito4,burrito5,burrito6]
 
 
@@ -165,23 +165,23 @@ expensive_core_burritos.each{|burrito|
 }
 
 menu_item1 = MenuItem.new({
-  'eatery_id' => eatery1.id,
+  'eatery_id' => el_cartel.id,
   'burrito_id' => burrito7.id,
   'price' => 9
   })
 menu_item2 = MenuItem.new({
-  'eatery_id' => eatery1.id,
+  'eatery_id' => el_cartel.id,
   'burrito_id' => burrito8.id,
   'price' => 9
   })
 menu_item3 = MenuItem.new({
-  'eatery_id' => eatery2.id,
+  'eatery_id' => antojito.id,
   'burrito_id' => burrito9.id,
   'price' => 9
   })
 menu_item4 = MenuItem.new({
-  'eatery_id' => eatery3.id,
-  'burrito_id' => burrito10.id,
+  'eatery_id' => mariachi.id,
+  'burrito_id' => sofritas0.id,
   'price' => 10
   })
 menu_item1.save
@@ -190,27 +190,27 @@ menu_item3.save
 menu_item4.save
 
 ##all burritos at a certain eatery on a certain day##
-#Eatery1 Monday 20% 
-eatery1.create_deal_for_category(monday,'20% off all Burritos at Eatery1 on Mondays',all_categories,'*',0.8)
-#Eatery2 Wednesday 10% 
-eatery2.create_deal_for_category(wednesday,'10% off all Burritos at Eatery2 on Wednesdays',all_categories,'*',0.9)
-#Eatery3 Friday 15%
-eatery3.create_deal_for_category(friday,'15% off all Burritos at Eatery3 on Fridays',all_categories,'*',0.85)
-#Eatery1 Thursday £1 
-eatery1.create_deal_for_category(thursday,'£1 off all Burritos at Eatery1 on Thursdays',all_categories,'-',1)
-#Eatery2 Sunday 50p
-eatery2.create_deal_for_category(sunday,'50p off all Burritos at Eatery2 on Sundays',all_categories,'-',0.5)
-#Eatery3 Tuesday £1.50 
-eatery3.create_deal_for_category(tuesday,'£1.50 off all Burritos at Eatery3 on Tuesdays',all_categories,'-',1.5)
-#Eatery1 Tuesday 2for1
-eatery1.create_deal_for_category(tuesday,'2 for 1 on all Burritos at Eatery1 on Tuesdays',all_categories,'special',0)
+#el_cartel Monday 20% 
+el_cartel.create_deal_for_category(monday,'20% off all Burritos at El Cartel on Mondays',all_categories,'*',0.8)
+#antojito Wednesday 10% 
+antojito.create_deal_for_category(wednesday,'10% off all Burritos at Antojito on Wednesdays',all_categories,'*',0.9)
+#mariachi Friday 15%
+mariachi.create_deal_for_category(friday,'15% off all Burritos at Mariachi on Fridays',all_categories,'*',0.85)
+#el_cartel Thursday £1 
+el_cartel.create_deal_for_category(thursday,'£1 off all Burritos at El Cartel on Thursdays',all_categories,'-',1)
+#antojito Sunday 50p
+antojito.create_deal_for_category(sunday,'50p off all Burritos at Antojito on Sundays',all_categories,'-',0.5)
+#mariachi Tuesday £1.50 
+mariachi.create_deal_for_category(tuesday,'£1.50 off all Burritos at Mariachi on Tuesdays',all_categories,'-',1.5)
+#el_cartel Tuesday 2for1
+el_cartel.create_deal_for_category(tuesday,'2 for 1 on all Burritos at El Cartel on Tuesdays',all_categories,'special',0)
 
 ##selection of burritos at a certain eatery on a certain day##
-#Eatery2 Thursday CP same as C
-eatery2.create_deal_for_category(thursday,'Classic Plus same price as Classic at Eatery2 on Thursdays',classic_plus,'special',0)
+#antojito Thursday CP same as C
+antojito.create_deal_for_category(thursday,'Classic Plus same price as Classic at Antojito on Thursdays',classic_plus,'special',0)
 
-#Eatery3 Monday specials are reduced by £1   
-eatery3.create_deal_for_category(monday,'Specials are all reduced by £1 at Eatery3 on Mondays',special,'-',1)
+#mariachi Monday specials are reduced by £1   
+mariachi.create_deal_for_category(monday,'Specials are all reduced by £1 at Mariachi on Mondays',special,'-',1)
 
 
 binding.pry
