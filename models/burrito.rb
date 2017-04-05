@@ -51,7 +51,7 @@ class Burrito
     old_p = self.price(eatery)
     old_p_and_operator = old_p.method(deal.operator)
     new_p = old_p_and_operator.call(deal.operand.to_i)
-    return new_p
+    return new_p.to_f.round(2)
   end
 
   def category()

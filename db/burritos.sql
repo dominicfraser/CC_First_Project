@@ -41,6 +41,6 @@ CREATE TABLE deals (
   deal_name VARCHAR(255) NOT NULL,
   burrito_cat INT4 REFERENCES food_categories(id) ON DELETE CASCADE,
   operator VARCHAR(255), 
-  operand INT
+  operand DECIMAL
 );
 
