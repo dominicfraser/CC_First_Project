@@ -142,6 +142,11 @@
    margin: 0em 0 0.5em 0;
  }
 
+ #admin-burritos-index h3 {
+   font-size: 1.4em;
+   margin: 0em 0 0.4em 0;
+ }
+
  #admin-burritos-index p {
      margin: 0.1em 0;
      font-size: 1.1em;
