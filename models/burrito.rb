@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require('pry')
 
 class Burrito
 
@@ -46,12 +47,11 @@ class Burrito
   end  
 
   def price_after(deal, eatery)
-    'Special Deal!' if deal.operator == 'special'
-
+    return 'Special Deal!' if deal.operator == 'special'
     old_p = self.price(eatery)
     old_p_and_operator = old_p.method(deal.operator)
-    new_p = old_p_and_operator.call(deal.operand.to_i)
-    return new_p.to_f.round(2)
+    new_p = old_p_and_operator.call(deal.operand.to_f)    
+    return "£#{new_p.to_f.round(2)}"
   end
 
   def category()

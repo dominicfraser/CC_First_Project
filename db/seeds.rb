@@ -212,5 +212,6 @@ eatery2.create_deal_for_category(thursday,'Classic Plus same price as Classic at
 #Eatery3 Monday specials are reduced by £1   
 eatery3.create_deal_for_category(monday,'Specials are all reduced by £1 at Eatery3 on Mondays',special,'-',1)
 
+
 binding.pry
 nil
