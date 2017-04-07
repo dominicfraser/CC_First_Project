@@ -29,7 +29,7 @@ class Deal
   end
 
   def burritos_when_b_cat_all(eatery, day)
-    if day.id == 1
+    if day.id == 1 #all days
       sql = "SELECT b.* FROM deals d
       INNER JOIN menu_items m
       ON d.menu_item_id=m.id
@@ -47,7 +47,7 @@ class Deal
       }
       return uniq
 
-    else
+    else #specific day
       sql = "SELECT b.* FROM deals d
       INNER JOIN menu_items m
       ON d.menu_item_id=m.id
@@ -63,9 +63,9 @@ class Deal
   end
 
   def burritos_applies_to(eatery, day)
-    if self.burrito_cat == 1 ##when category is 'all'
+    if self.burrito_cat == 1 ##when category is 'all categories'
       self.burritos_when_b_cat_all(eatery, day)
-    else
+    else #when for a specific category
       sql = "SELECT b.* FROM deals d
       INNER JOIN menu_items m
       ON d.menu_item_id=m.id

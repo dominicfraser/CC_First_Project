@@ -49,8 +49,8 @@ class Burrito
   def price_after(deal, eatery)
     return 'Special Deal!' if deal.operator == 'special'
     old_p = self.price(eatery)
-    old_p_and_operator = old_p.method(deal.operator)
-    new_p = old_p_and_operator.call(deal.operand.to_f)    
+    old_p_and_operator = old_p.method(deal.operator) #2.method('+')
+    new_p = old_p_and_operator.call(deal.operand.to_f) #2 + 2.0   
     return "£#{new_p.to_f.round(2)}"
   end
 

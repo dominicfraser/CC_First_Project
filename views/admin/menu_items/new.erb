@@ -1,10 +1,10 @@
 <div>
   <h1>New Menu Item Details</h1>
-  <form method='post' action='admin/menu_items'>
+  <form method='post' action='/admin/menu_items'>
     <label for='eatery-id'>Eatery:</label>
     <select required id='eatery-id' name='eatery_id'>
       <% @eateries.each do |eatery| %>
-      <option value='eatery.id'><%= eatery.eatery_name %></option>
+      <option value='<%= eatery.id %>'><%= eatery.eatery_name %></option>
       <% end %>
     </select>
     <br>

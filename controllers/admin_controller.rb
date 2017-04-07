@@ -3,6 +3,7 @@ require_relative('../models/eatery')
 require_relative('../models/deal')
 require_relative('../models/menu_item')
 require_relative('../models/food_category')
+require('pry')
 
 ##BURRITOS
 get '/admin/burritos/index' do
@@ -39,7 +40,7 @@ get '/admin/menu_items/new/:bid' do
   erb(:'admin/menu_items/new', :layout => :admin_layout)
 end
 
-post 'admin/menu_items' do
+post '/admin/menu_items' do
 
 if params['eatery_id'] == 1
   MenuItem.new_all(params['burrito_id'],params['price'])
@@ -112,7 +113,7 @@ post '/admin/deals/new' do
 end
 
 post '/admin/deals/:eid' do
-  @eatery = Eatery.find(params[:eid])
+  @eatery = Eatery.find(params[:eid])  
   @deals = Deal.all_uniq_names
   @day = Day.find(params[:day_id])
   @bur_cat = FoodCategory.find(params[:burrito_cat])
