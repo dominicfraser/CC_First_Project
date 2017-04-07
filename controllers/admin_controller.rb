@@ -23,7 +23,6 @@ post '/admin/burritos' do
   @burritos = Burrito.all
 # USE "" when string interpolation
   params['add'] == 'y' ? (redirect "/admin/menu_items/new/#{@burrito.id}") : erb(:'admin/burritos/index', :layout => :admin_layout)
-  #erb(:'admin/burrito/create')
 end
 
 post '/admin/burritos/:id/delete' do

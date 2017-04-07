@@ -21,7 +21,6 @@
  }
 
  #header {
-    /*background:#ff0;*/
     padding:10px 0;
     height: 2em;
     position: fixed;
@@ -35,7 +34,6 @@
     bottom:0;
     width:100%;
     height:60px;   /* Height of the footer */
-    /*background:#6cf;*/
  }
 
  /* MAIN MENU */
@@ -195,7 +193,6 @@
  #admin-burritos-index p {
      margin: 0.1em 0;
      font-size: 1.1em;
-  /*width: 40%;*/   
  }
 
  #admin-burritos-index p label {
